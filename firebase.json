@@ -1,0 +1,13 @@
+{
+    "hosting": {
+        "public": "apps/wiki/out",
+        "cleanUrls": true,
+        "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+        "rewrites": [
+            {
+                "source": "**",
+                "destination": "/404.html"
+            }
+        ]
+    }
+}
