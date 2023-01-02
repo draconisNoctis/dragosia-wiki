@@ -9,10 +9,14 @@
         "start": "next start"
     },
     "dependencies": {
+        "@dragosia/firebase": "*",
         "@dragosia/ui": "*",
+        "@emotion/react": "^11.10.5",
+        "@emotion/server": "11.10.0",
         "@mdx-js/loader": "^2.2.1",
         "@mdx-js/react": "^2.2.1",
         "@next/mdx": "^13.1.1",
+        "firebase": "^9.15.0",
         "next": "13.1.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
