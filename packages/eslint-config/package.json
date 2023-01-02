@@ -1,0 +1,19 @@
+{
+    "name": "@dragosia/eslint-config",
+    "version": "0.0.0",
+    "license": "MIT",
+    "main": "index.js",
+    "dependencies": {
+        "eslint": "^8.31.0",
+        "eslint-config-next": "13.1.1",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-config-turbo": "latest",
+        "eslint-plugin-react": "7.31.11"
+    },
+    "devDependencies": {
+        "typescript": "^4.9.4"
+    },
+    "publishConfig": {
+        "access": "public"
+    }
+}
