@@ -1,0 +1,30 @@
+import { WikiPageMeta, WikiPageWrapper } from '@dragosia/ui';
+import { getPages } from '@dragosia/wiki';
+
+export const meta = {
+    title: 'Hexenkundige',
+    tags: ['hexerei', 'magie', 'hexe', 'hexer']
+};
+export const getStaticProps = WikiPageWrapper.staticProps(() => getPages('wiki/**/*'));
+export default WikiPageWrapper(meta);
+
+# Hexenkundige
+
+Hexen und Hexer Personen, die sich auf die Anwendung von Magie und spirituellen Praktiken spezialisiert haben.
+Sie sind sehr geübt in der praktischen Anwendung ihrer Künste und können als [Kräuterkundige](/wiki/kraeuterkunde) betrachtet werden,
+die sich mit der Verwendung von Pflanzen und ihren heilenden Eigenschaften beschäftigen.
+Sie können auch als magisch begabte Personen betrachtet werden, die über bestimmte Fähigkeiten oder Kräfte verfügen.
+
+Hexen und Hexer lehnen die Magie der Magii meist ab, da sie ihnen als unnatürlich erscheint.
+Sie konzentrieren sich stattdessen auf die Anwendung von Magie, die sie als natürlicher und harmonischer betrachten.
+Viele lehnen auch den Gebrauch von Magie ab, um andere zu kontrollieren oder zu schaden.
+
+Hexen und Hexer respektiert, aber auch gefürchtet. Meistens wohnen sie außerhalb der Dörfer und Städte und haben eine enge Verbindung zur Natur und verfügen über ein tiefes Wissen über Pflanzen und ihre Eigenschaften.
+Sie nutzen ihre Kräfte und Fähigkeiten, um anderen zu helfen und die Harmonie in der Welt aufrechtzuerhalten.
+
+Es existieren jedoch auch böse Hexen und Hexer, die ihre Fähigkeiten nutzen, um andere zu schaden, zu kontrollieren oder zu beeinflussen.
+Sie sind meistens nur auf ihre eigenen Bedürfnisse ausgerichtet und lehnen die Ideale der natürlichen Harmonie ab.
+Böse Hexen und Hexer sind in der Regel weniger respektiert und oft von der Gesellschaft geächtet.
+Sie werden oft als Bedrohung angesehen und manchmal sogar verfolgt.
+
+Es ist wichtig, dass man sorgfältig auswählt, wem man vertraut und wer einem helfen kann, um sicherzustellen, dass man sich nicht in die Hände böser Hexen und Hexer begibt.
