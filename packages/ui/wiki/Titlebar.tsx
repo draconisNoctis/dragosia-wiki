@@ -28,7 +28,7 @@ export const WikiTitlebar: React.FunctionComponent = () => {
 
                             {!user && (
                                 <Button onClick={signInWithGoogle} color="inherit">
-                                    Einloggen mit Google
+                                    Login
                                 </Button>
                             )}
                             {user && (
