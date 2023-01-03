@@ -1,7 +1,7 @@
 import glob from 'glob-promise';
 import path from 'node:path';
 
-import { WikiPage } from '@dragosia/ui';
+import { WikiPageWrapper } from '@dragosia/ui';
 
 export async function getPages(pattern?: string): Promise<WikiPage[]> {
     const pageDir = path.resolve(process.cwd(), 'pages');

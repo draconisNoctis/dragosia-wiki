@@ -27,29 +27,41 @@ export function useWikiPage() {
     return React.useContext(WikiPageContext);
 }
 
-export function WikiPage(meta: WikiPageMeta): React.FunctionComponent<React.PropsWithChildren<{ pages?: WikiPage[] }>> {
+export function WikiPageWrapper(meta: WikiPageMeta): React.FunctionComponent<React.PropsWithChildren<{ pages?: WikiPage[] }>> {
     return ({ children, pages }) => {
         return (
-            <WikiPageContext.Provider
-                value={{ page: pages?.find(p => p.meta?.title === meta.title && p.meta.tags?.join() === meta.tags?.join()), pages }}>
-                <Head>
-                    <title>{meta.title}</title>
-                </Head>
-                <WikiTitlebar />
-                <Container>
-                    <Card sx={{ mt: 4 }}>
-                        <CardContent>
-                            <WikiBreadcrumbs sx={{ mb: -2 }} />
-                            {children}
-                        </CardContent>
-                    </Card>
-                </Container>
-            </WikiPageContext.Provider>
+            <WikiPage meta={meta} pages={pages}>
+                {children}
+            </WikiPage>
         );
     };
 }
 
-export module WikiPage {
+export const WikiPage: React.FunctionComponent<React.PropsWithChildren<{ pages?: WikiPage[]; meta: WikiPageMeta }>> = ({
+    children,
+    pages,
+    meta
+}) => {
+    return (
+        <WikiPageContext.Provider
+            value={{ page: pages?.find(p => p.meta?.title === meta.title && p.meta.tags?.join() === meta.tags?.join()), pages }}>
+            <Head>
+                <title>{meta.title}</title>
+            </Head>
+            <WikiTitlebar />
+            <Container>
+                <Card sx={{ mt: 4 }}>
+                    <CardContent>
+                        <WikiBreadcrumbs sx={{ mb: -2 }} />
+                        {children}
+                    </CardContent>
+                </Card>
+            </Container>
+        </WikiPageContext.Provider>
+    );
+};
+
+export module WikiPageWrapper {
     export function staticProps(pages: () => Promise<WikiPage[]>) {
         return async function getStaticProps() {
             return {

@@ -1,12 +1,12 @@
-import { WikiPage, WikiPageMeta } from '@dragosia/ui';
+import { WikiPageMeta, WikiPageWrapper } from '@dragosia/ui';
 import { getPages } from '@dragosia/wiki';
 
 export const meta = {
     title: 'Die Grüne Klamm',
     tags: ['nordlandreich']
 };
-export const getStaticProps = WikiPage.staticProps(() => getPages('wiki/**/*'));
-export default WikiPage(meta);
+export const getStaticProps = WikiPageWrapper.staticProps(() => getPages('wiki/**/*'));
+export default WikiPageWrapper(meta);
 
 # Die Grüne Klamm
 
