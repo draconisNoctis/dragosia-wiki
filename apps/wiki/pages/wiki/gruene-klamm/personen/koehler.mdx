@@ -1,13 +1,16 @@
 import { WikiGmInfo, WikiPage, WikiPageMeta } from '@dragosia/ui';
+import { getPages } from '@dragosia/wiki';
 
 export const meta = {
-    title: 'Die Grüne Klamm - Personen - Der Köhler',
+    title: 'Der Köhler',
     tags: ['nordlandreich', 'grüne klamm', 'person']
 };
+export const getStaticProps = WikiPage.staticProps(() => getPages('wiki/**/*'));
+export default WikiPage(meta);
 
 # Der Köhler
 
-Der Köhler lebt als Einsiedler in einer kleinen Hütte in der Nähe des westlichen Walds in der [Grünen Klamm](../).
+Der Köhler lebt als Einsiedler in einer kleinen Hütte in der Nähe des westlichen Walds in der [Grünen Klamm](/wiki/gruene-klamm).
 Er ist ein älterer, kräftiger Mann mit einem wettergegerbten Gesicht und einem buschigen Bart.
 Er trägt meistens einfach aber belastbare Leder und Leinenkleidung und hat immer eine Axt in der Hand.
 
@@ -31,5 +34,3 @@ Mögliche Ursachen:
 -   Verletzung durch Überfall (zusätzlich Werkzeug verschwunden/gestohlen)
 
 </WikiGmInfo>
-
-export default WikiPage(meta);

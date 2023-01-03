@@ -1,9 +1,12 @@
 import { WikiPage, WikiPageMeta } from '@dragosia/ui';
+import { getPages } from '@dragosia/wiki';
 
 export const meta = {
     title: 'Triumvirat',
     tags: ['nordlandreich']
 };
+export const getStaticProps = WikiPage.staticProps(() => getPages('wiki/**/*'));
+export default WikiPage(meta);
 
 # Triumvirat
 
@@ -11,5 +14,3 @@ Ein Triumvirat ist ein politisches Gremium, das aus drei Personen besteht und di
 Es wird im [Nordlandreich](./nordlandreich) häufig als Alternative zur Ein-Mann-Herrschaft eingesetzt.
 In einem Triumvirat gibt es keine einzige führende Person, sondern die Macht wird zwischen den drei Personen aufgeteilt.
 Sie treffen gemeinsam Entscheidungen und führen das Land oder die Stadt gemeinsam.
-
-export default WikiPage(meta);

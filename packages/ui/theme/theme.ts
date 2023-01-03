@@ -1,4 +1,3 @@
-import { red } from '@mui/material/colors';
 import { createTheme } from '@mui/material/styles';
 
 // Create a theme instance.
@@ -6,13 +5,13 @@ export const THEME = createTheme({
     palette: {
         mode: 'dark',
         primary: {
-            main: '#330000'
+            main: '#330500'
         },
         secondary: {
             main: '#00AA00'
         },
         error: {
-            main: red.A400
+            main: '#AA0000'
         }
     },
     typography: {

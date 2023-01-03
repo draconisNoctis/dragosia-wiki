@@ -4,9 +4,12 @@ import remarkGfm from 'remark-gfm';
 
 export default withMDX({
     extension: /\.mdx?$/,
-    options: { providerImportSource: '@mdx-js/react', remarkPlugins: [remarkGfm, remarkFrontmatter] }
+    options: {
+        providerImportSource: '@mdx-js/react',
+        remarkPlugins: [remarkGfm, remarkFrontmatter]
+    }
 })({
-    pageExtensions: ['tsx', 'mdx'],
+    pageExtensions: ['ts', 'tsx', 'md', 'mdx', 'js', 'jsx'],
     reactStrictMode: true,
-    transpilePackages: ['@dragosia/ui']
+    transpilePackages: ['@dragosia/ui', '@dragosia/firebase']
 });

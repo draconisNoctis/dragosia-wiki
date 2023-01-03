@@ -1,3 +1,4 @@
+import { useWikiPage } from '.';
 import MuiLink, { LinkProps as MuiLinkProps } from '@mui/material/Link';
 import { styled } from '@mui/material/styles';
 import clsx from 'clsx';
@@ -64,6 +65,7 @@ export const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(function Link
     } = props;
 
     const router = useRouter();
+    const { pages } = useWikiPage();
     const pathname = typeof href === 'string' ? href : href.pathname;
     const className = clsx(classNameProps, {
         [activeClassName]: router.pathname === pathname && activeClassName
@@ -76,7 +78,7 @@ export const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(function Link
             return <Anchor className={className} href={href} ref={ref} {...other} />;
         }
 
-        return <MuiLink className={className} href={href} ref={ref} {...other} />;
+        return <MuiLink className={className} href={href} ref={ref} color="secondary" {...other} />;
     }
 
     const linkAs = linkAsProp || as;
@@ -95,5 +97,7 @@ export const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(function Link
         return <NextLinkComposed className={className} ref={ref} {...nextjsProps} {...other} />;
     }
 
-    return <MuiLink component={NextLinkComposed} className={className} ref={ref} {...nextjsProps} {...other} />;
+    const color = typeof href !== 'string' || pages?.some(p => p.link === href) ? 'secondary' : 'error';
+
+    return <MuiLink component={NextLinkComposed} className={className} ref={ref} color={color} {...nextjsProps} {...other} />;
 });

@@ -1,9 +1,12 @@
 import { WikiPage, WikiPageMeta } from '@dragosia/ui';
+import { getPages } from '@dragosia/wiki';
 
 export const meta = {
     title: 'Die Grüne Klamm',
     tags: ['nordlandreich']
 };
+export const getStaticProps = WikiPage.staticProps(() => getPages('wiki/**/*'));
+export default WikiPage(meta);
 
 # Die Grüne Klamm
 
@@ -35,11 +38,9 @@ an dem sich die Dorfbewohner jeden Tag treffen, um Neuigkeiten auszutauschen und
 Die Dorfbewohner sind sehr stolz auf ihre Arbeit und versuchen, das Beste aus allem zu machen, was sie haben.
 Sie sind sehr hilfsbereit und immer bereit, Abenteurern, die durch das Tal reisen, zu helfen.
 
-Das Dorf wird von einem [Triumvirat](./triumvirat) der Ältesten regiert, bestehend aus drei Personen, die zusammen alle wichtigen Entscheidungen treffen.
+Das Dorf wird von einem [Triumvirat](/wiki/triumvirat) der Ältesten regiert, bestehend aus drei Personen, die zusammen alle wichtigen Entscheidungen treffen.
 Sie sind weise und gerecht und sorgen dafür, dass das Dorf in Frieden und Harmonie lebt.
 
 ## Personen
 
--   [Der Köhler](./gruene-klamm/personen/koehler)
-
-export default WikiPage(meta);
+-   [Der Köhler](/wiki/gruene-klamm/personen/koehler)
