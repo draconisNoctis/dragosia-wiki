@@ -1,4 +1,5 @@
 import { CacheProvider, EmotionCache, ThemeProvider } from '@emotion/react';
+import '@fontsource/almendra';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
@@ -14,7 +15,7 @@ import { Link, THEME, createEmotionCache } from '@dragosia/ui';
 
 const clientSideEmotionCache = createEmotionCache();
 const components: MDXComponents = {
-    a: ({ href = '#', target, children, id }) => <Link underline="none" {...{ href, target, children, id }} />,
+    a: ({ href = '#', target, children, id }) => <Link {...{ href, target, children, id }} />,
     h1: ({ id, children }) => (
         <Typography variant="h2" component="h2" id={id} sx={{ mt: '1.6rem' }}>
             {children}

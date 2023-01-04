@@ -9,7 +9,8 @@ export const TagList: React.FunctionComponent<{ pages: WikiPage[] }> = ({ pages 
 
     const sortedPages = React.useMemo(() => pages.slice().sort((a, b) => a.meta?.title.localeCompare(b.meta?.title ?? '') ?? 0), [pages]);
     const tags = React.useMemo(
-        () => [...new Set(pages.reduce((t, c) => [...t, ...(c.meta?.tags ?? [])], [] as string[]))].sort((a, b) => a.localeCompare(b)),
+        () =>
+            Array.from(new Set(pages.reduce((t, c) => [...t, ...(c.meta?.tags ?? [])], [] as string[]))).sort((a, b) => a.localeCompare(b)),
         [sortedPages]
     );
 

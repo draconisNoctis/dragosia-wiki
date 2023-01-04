@@ -1,9 +1,14 @@
-import { Card, CardContent, Container } from '@mui/material';
+import { ThemeProvider } from '@mui/material';
 import Head from 'next/head';
 import React from 'react';
 
+import { PageContent } from '../page/Content';
+import { PageHeader } from '../page/Header';
+import { PageWrapper } from '../page/Wrapper';
+import { THEME } from '../theme';
+
 import { WikiBreadcrumbs } from './Breadcrumb';
-import { WikiTitlebar } from './Titlebar';
+import { Link } from './Link';
 
 export interface WikiPageMeta {
     title: string;
@@ -37,26 +42,24 @@ export function WikiPageWrapper(meta: WikiPageMeta): React.FunctionComponent<Rea
     };
 }
 
-export const WikiPage: React.FunctionComponent<React.PropsWithChildren<{ pages?: WikiPage[]; meta: WikiPageMeta }>> = ({
-    children,
-    pages,
-    meta
-}) => {
+export const WikiPage: React.FunctionComponent<
+    React.PropsWithChildren<{ pages?: WikiPage[]; meta: WikiPageMeta; navigation?: React.ReactNode }>
+> = ({ children, navigation, pages, meta }) => {
     return (
         <WikiPageContext.Provider
             value={{ page: pages?.find(p => p.meta?.title === meta.title && p.meta.tags?.join() === meta.tags?.join()), pages }}>
-            <Head>
-                <title>{meta.title}</title>
-            </Head>
-            <WikiTitlebar />
-            <Container>
-                <Card sx={{ mt: 4 }}>
-                    <CardContent>
-                        <WikiBreadcrumbs sx={{ mb: -2 }} />
+            <ThemeProvider theme={THEME}>
+                <Head>
+                    <title>{meta.title}</title>
+                </Head>
+                <PageWrapper>
+                    <PageHeader title={meta.title}>{navigation}</PageHeader>
+                    <PageContent>
+                        <WikiBreadcrumbs />
                         {children}
-                    </CardContent>
-                </Card>
-            </Container>
+                    </PageContent>
+                </PageWrapper>
+            </ThemeProvider>
         </WikiPageContext.Provider>
     );
 };
