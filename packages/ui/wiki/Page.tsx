@@ -35,7 +35,7 @@ export function useWikiPage() {
 export function WikiPageWrapper(meta: WikiPageMeta): React.FunctionComponent<React.PropsWithChildren<{ pages?: WikiPage[] }>> {
     return ({ children, pages }) => {
         return (
-            <WikiPage meta={meta} pages={pages}>
+            <WikiPage meta={meta} pages={pages} navigation={<Link href="/wiki">Tags</Link>}>
                 {children}
             </WikiPage>
         );
