@@ -23,7 +23,7 @@ export default function Index() {
                     <Link href="/regelwerk" passHref>
                         <Button variant="outlined">Regelwerk</Button>
                     </Link>
-                    <Link href="/wiki" as="div" passHref>
+                    <Link href="/wiki" passHref>
                         <Button variant="outlined">Wiki</Button>
                     </Link>
                 </Box>
