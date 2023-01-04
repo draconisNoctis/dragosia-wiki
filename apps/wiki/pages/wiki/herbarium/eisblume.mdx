@@ -1,0 +1,13 @@
+import { WikiPageMeta, WikiPageWrapper } from '@dragosia/ui';
+import { getPages } from '@dragosia/wiki';
+
+export const meta = {
+    title: 'Eisblume',
+    tags: ['herbarium']
+};
+export const getStaticProps = WikiPageWrapper.staticProps(() => getPages('wiki/**/*'));
+export default WikiPageWrapper(meta);
+
+# Eisblume
+
+Eine blassblaue Pflanze, die nur in den kältesten Regionen der Welt wächst. Ihre meist getrockneten Blätter und Blüten werden in Tränke gegeben, um Körper und Geist zu kühlen und Schmerzen zu lindern.

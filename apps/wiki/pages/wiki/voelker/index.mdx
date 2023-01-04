@@ -1,0 +1,20 @@
+import { WikiPageMeta, WikiPageWrapper } from '@dragosia/ui';
+import { getPages } from '@dragosia/wiki';
+
+export const meta = {
+    title: 'Völker',
+    tags: []
+};
+export const getStaticProps = WikiPageWrapper.staticProps(() => getPages('wiki/**/*'));
+export default WikiPageWrapper(meta);
+
+# Völker
+
+-   [Menschen](/wiki/voelker/menschen)
+-   [Zwerge](/wiki/voelker/zwerge)
+-   [Orks](/wiki/voelker/orks)
+-   [Goblins](/wiki/voelker/goblins)
+-   [Trolle](/wiki/voelker/trolle)
+-   [Elfen](/wiki/voelker/elfen)
+-   [Naga](/wiki/voelker/naga)
+-   [Draconii](/wiki/voelker/draconii)

@@ -1,0 +1,13 @@
+import { WikiPageMeta, WikiPageWrapper } from '@dragosia/ui';
+import { getPages } from '@dragosia/wiki';
+
+export const meta = {
+    title: 'Mondbeere',
+    tags: ['herbarium']
+};
+export const getStaticProps = WikiPageWrapper.staticProps(() => getPages('wiki/**/*'));
+export default WikiPageWrapper(meta);
+
+# Mondbeere
+
+Eine seltene, silberfarbene Beere, die nur aus ihrer Blüte bei Vollmond gepflückt werden kann. Sie wird oft von Hexen und Hexern verwendet, um magische Tränke herzustellen, die die Gedächtnisleistung verbessern.

@@ -1,0 +1,13 @@
+import { WikiPageMeta, WikiPageWrapper } from '@dragosia/ui';
+import { getPages } from '@dragosia/wiki';
+
+export const meta = {
+    title: 'Waldfeder',
+    tags: ['herbarium']
+};
+export const getStaticProps = WikiPageWrapper.staticProps(() => getPages('wiki/**/*'));
+export default WikiPageWrapper(meta);
+
+# Waldfeder
+
+Eine seltene, grüne Pflanze, die nur in dunklen Wäldern gedeihen kann. Ihre Blätter werden oft von Hexen und Hexern verwendet, um magische Tinkturen herzustellen, die die Konzentration verbessern.

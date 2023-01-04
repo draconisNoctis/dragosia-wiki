@@ -1,0 +1,18 @@
+import { WikiPageMeta, WikiPageWrapper } from '@dragosia/ui';
+import { getPages } from '@dragosia/wiki';
+
+export const meta = {
+    title: 'Elfen',
+    tags: ['volk']
+};
+export const getStaticProps = WikiPageWrapper.staticProps(() => getPages('wiki/**/*'));
+export default WikiPageWrapper(meta);
+
+# Elfen
+
+Elfen sind ein Volk, das schon seit Jahrhunderten in Dragosia bekannt ist.
+Sie sind bekannt für ihre Schönheit und Anmut und gelten als die am längsten lebenden aller Völker.
+Sie haben feines, goldblondes oder silbernes Haar und schlanke, hohe Gestalten. Sie sind ausgezeichnete Bogenschützen und Krieger und besitzen eine natürliche Anmut und Geschicklichkeit.
+In der Vergangenheit haben sie versucht, die gesamte Welt unter ihre Herrschaft zu bringen, sind aber von den anderen Völkern besiegt worden.
+Heute sind sie sehr selten und ihr Verhältnis zu den anderen Völkern ist schwierig.
+Sie werden oft als arrogant und überheblich angesehen und sind auch dafür bekannt, ihre Macht und ihre Fähigkeiten zu missbrauchen.

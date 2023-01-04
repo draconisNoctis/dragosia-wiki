@@ -1,0 +1,15 @@
+import { WikiPageMeta, WikiPageWrapper } from '@dragosia/ui';
+import { getPages } from '@dragosia/wiki';
+
+export const meta = {
+    title: 'Steineiche',
+    tags: ['herbarium', 'baum']
+};
+export const getStaticProps = WikiPageWrapper.staticProps(() => getPages('wiki/**/*'));
+export default WikiPageWrapper(meta);
+
+# Steineiche
+
+Die Steineiche ist ein Baum, der in Dragosia häufig in den Bergen und Gebirgen vorkommt.
+Er ist bekannt für seine besonders hartes, widerstandsfähige und schwarzes Holz, das sich ideal für den Bau von Waffen und Gebäuden eignet.
+Die Steineiche wächst sehr langsam und wird daher meist mit einem Alter von mehreren hundert Jahren gefällt. Ihr Laub ist dunkelgrün und fällt im Herbst ab.

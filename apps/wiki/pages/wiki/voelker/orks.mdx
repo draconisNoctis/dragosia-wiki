@@ -1,0 +1,27 @@
+import { WikiPageMeta, WikiPageWrapper } from '@dragosia/ui';
+import { getPages } from '@dragosia/wiki';
+
+export const meta = {
+    title: 'Orks',
+    tags: ['volk']
+};
+export const getStaticProps = WikiPageWrapper.staticProps(() => getPages('wiki/**/*'));
+export default WikiPageWrapper(meta);
+
+# Orks
+
+Orks sind ein brutaler und kriegerischer Stamm, der sich rund um die riesigen Wehrstadt Gorgonthor im Westen des Kontinents niedergelassen hat.
+Sie sind bekannt für ihre starken Körper, ihre Geschicklichkeit im Kampf und ihre Fähigkeit, Waffen und Rüstungen herzustellen.
+Obwohl sie viele Jahre lang als Eindringlinge betrachtet wurden, haben sie in den letzten Jahrzehnten Frieden mit den anderen Völkern geschlossen
+und sind nun Teil der Gesellschaft in Dragosia.
+Sie haben jedoch immer noch einen gewissen Ruf als Kriegstreiber und sind manchmal Gegenstand von Vorurteilen und Diskriminierung.
+
+## Geschichte
+
+Das Volk der Orks wurden von den Elfen erschaffen wurde,
+um während des letzten Elfenkrieges als Kriegstruppen eingesetzt zu werden.
+Nachdem der Krieg beendet wurde, wurden die Orks von den Elfen auf die freien Völker losgelassen und zogen durch das Land,
+auf der Suche nach einem Ort, an dem sie sich niederlassen konnten.
+Sie wurden jedoch überall mit Gewalt vertrieben und mussten schließlich im Westen in den Sümpfen des Elends Zuflucht suchen.
+Dort errichteten sie die riesige Wehrstadt Gorgonthor und leben seitdem abgeschieden von den anderen Völkern.
+Obwohl sie für ihre kriegerischen Fähigkeiten bekannt sind, sind sie auch sehr fähige Handwerker.

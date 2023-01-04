@@ -1,0 +1,24 @@
+import { WikiPageMeta, WikiPageWrapper } from '@dragosia/ui';
+import { getPages } from '@dragosia/wiki';
+
+export const meta = {
+    title: 'Zwerge',
+    tags: ['volk']
+};
+export const getStaticProps = WikiPageWrapper.staticProps(() => getPages('wiki/**/*'));
+export default WikiPageWrapper(meta);
+
+# Zwerge
+
+In Dragosia sind Zwerge eine kleine, aber mächtige Rasse. Sie sind kräftig gebaut und haben immer einen Bart, auch bei den weiblichen Zwergen.
+Sie sind berühmt für ihre handwerklichen Fähigkeiten, insbesondere im Umgang mit Feuer und der Schmiedekunst.
+Zwerge sind auch gute Kämpfer und haben eine starke Bindung an ihr Volk und ihre Familie.
+
+Zwerge in Dragosia sind auch bekannt für ihre Gier nach Gold und anderen Schätzen, und sie sind begabte Schatzsucher.
+Sie halten an jahrhundertealten Traditionen fest, auch wenn diese ihnen manchmal zum Nachteil gereichen.
+Zwerge sind auch bekannt für ihr feierfreudiges Wesen und ihre Vorliebe für das Trinken.
+
+Zwerge leben oft unter der Erde, in Höhlen und Tunneln, die sie selbst gegraben haben.
+Sie haben sich auf das Leben unter der Erde spezialisiert und sind begabte Tunnelbauer.
+Sie haben auch eine Vorliebe für das Kämpfen und die Verteidigung ihres Heimatlandes.
+Zwerge in Dragosia werden auch sehr viel älter als Menschen und erreichen oft hohe Alter.

@@ -1,0 +1,14 @@
+import { WikiPageMeta, WikiPageWrapper } from '@dragosia/ui';
+import { getPages } from '@dragosia/wiki';
+
+export const meta = {
+    title: 'Sternenmohn',
+    tags: ['herbarium']
+};
+export const getStaticProps = WikiPageWrapper.staticProps(() => getPages('wiki/**/*'));
+export default WikiPageWrapper(meta);
+
+# Sternenmohn
+
+Diese Pflanze besitzt leuchtend blaue Blüten und wächst nur in hochgelegenen Gebieten.
+Ihre Blätter werden oft als Heilmittel gegen Kopfschmerzen verwendet und ihr Saft wird als Zutat in Tränken verwendet, um die Träume zu beeinflussen.

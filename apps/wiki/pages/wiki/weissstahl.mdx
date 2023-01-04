@@ -1,0 +1,18 @@
+import { WikiPageMeta, WikiPageWrapper } from '@dragosia/ui';
+import { getPages } from '@dragosia/wiki';
+
+export const meta = {
+    title: 'Weißstahl',
+    tags: ['metall']
+};
+export const getStaticProps = WikiPageWrapper.staticProps(() => getPages('wiki/**/*'));
+export default WikiPageWrapper(meta);
+
+# Weißstahl
+
+Weißstahl ist ein sehr hartes und zähes Metall, das aus einer Legierung von Titan und anderen Metallen hergestellt wird.
+Es wird oft in der Industrie eingesetzt, da es sehr langlebig und widerstandsfähig ist.
+Weißstahl hat auch eine hohe Zähigkeit und kann sehr hohen Belastungen standhalten, ohne zu brechen.
+
+Weißstahl hat auch eine sehr hohe Schmelztemperatur und ist daher sehr schwer zu bearbeiten, nur den [Zwergen](/wiki/voelker/zwerge) ist bekannt, wie die Erze aufbereitet werden können.
+Seine Legierungen werden häufig in der Schmiedekunst eingesetzt und ist sehr beliebt bei Schmieden, die hochwertige Waffen und Rüstungen herstellen wollen.

@@ -1,0 +1,13 @@
+import { WikiPageMeta, WikiPageWrapper } from '@dragosia/ui';
+import { getPages } from '@dragosia/wiki';
+
+export const meta = {
+    title: 'Wanderwurz',
+    tags: ['herbarium']
+};
+export const getStaticProps = WikiPageWrapper.staticProps(() => getPages('wiki/**/*'));
+export default WikiPageWrapper(meta);
+
+# Wanderwurz
+
+Eine kriechende Pflanze, die sich schnell ausbreitet und schwierig zu entfernen ist. Sie wird oft als Schutz verwendet, um böse Geister und Wesen fernzuhalten.

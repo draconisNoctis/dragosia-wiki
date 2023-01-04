@@ -1,0 +1,17 @@
+import { WikiPageMeta, WikiPageWrapper } from '@dragosia/ui';
+import { getPages } from '@dragosia/wiki';
+
+export const meta = {
+    title: 'Glühfadenpilz',
+    tags: ['herbarium']
+};
+export const getStaticProps = WikiPageWrapper.staticProps(() => getPages('wiki/**/*'));
+export default WikiPageWrapper(meta);
+
+# Glühfadenpilz
+
+Der Glühfadenpilz ist eine seltene Art von Pilz, die in der Lage ist, die überall vorhandene Magie in seinem Umgebung zu nutzen, um zu leuchten.
+Er wächst am besten in dunklen, feuchten Höhlen und wird häufig von den Zwergen gezüchtet, um Licht in ihren Unterkünften zu erzeugen.
+Der kultivierte Glühfadenpilz leuchtet in einem hellen, warmem Gelb und hat eine ähnliche Helligkeit wie eine Kerze.
+Er ist sehr nützlich für diejenigen, die in dunklen Umgebungen arbeiten oder sich aufhalten müssen, da er eine natürliche, ungefährliche Quelle für Licht bietet.
+Allerdings ist der Glühfadenpilz auch sehr empfindlich und benötigt besondere Pflege, um zu gedeihen.

@@ -1,0 +1,17 @@
+import { WikiPageMeta, WikiPageWrapper } from '@dragosia/ui';
+import { getPages } from '@dragosia/wiki';
+
+export const meta = {
+    title: 'Trolle',
+    tags: ['volk']
+};
+export const getStaticProps = WikiPageWrapper.staticProps(() => getPages('wiki/**/*'));
+export default WikiPageWrapper(meta);
+
+# Trolle
+
+Trolle sind sehr große und kräftige Kreaturenaus Stein.
+Sie sind nicht sehr intelligent und haben eine kurze Aufmerksamkeitsspanne.
+In der Vergangenheit haben sie oft gegen die Zwerge gekämpft, da sie deren Minen für sich beanspruchen wollten.
+Inzwischen haben sich einige Trolle aber auch an andere Völker angepasst und leben als friedliche Arbeiter in verschiedenen Dörfern und Städten.
+Sie sind sehr gut dafür geeignet, schwere und schmutzige Arbeiten zu verrichten.

@@ -1,0 +1,14 @@
+import { WikiPageMeta, WikiPageWrapper } from '@dragosia/ui';
+import { getPages } from '@dragosia/wiki';
+
+export const meta = {
+    title: 'Schattenkelch',
+    tags: ['herbarium']
+};
+export const getStaticProps = WikiPageWrapper.staticProps(() => getPages('wiki/**/*'));
+export default WikiPageWrapper(meta);
+
+# Schattenkelch
+
+Diese Pflanze besitzt dunkle purpurfarbene Blüten und wächst nur nur in dunklen Wäldern.
+Ihr Saft wird oft als Zutat in Tränken verwendet, um die Nachtsehfähigkeit zu verbessern und Gifte herzustellen.

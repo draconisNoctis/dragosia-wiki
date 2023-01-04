@@ -1,0 +1,13 @@
+import { WikiPageMeta, WikiPageWrapper } from '@dragosia/ui';
+import { getPages } from '@dragosia/wiki';
+
+export const meta = {
+    title: 'Sternenstaub',
+    tags: ['herbarium']
+};
+export const getStaticProps = WikiPageWrapper.staticProps(() => getPages('wiki/**/*'));
+export default WikiPageWrapper(meta);
+
+# Sternenstaub
+
+Eine seltene, glitzernde Pflanze, die nur in hoch gelegenen Gebirgsregionen gedeiht. Ihre Blüten werden in Tränke gegeben, um die magischen Fähigkeiten von Hexen und Magii zu verstärken.
