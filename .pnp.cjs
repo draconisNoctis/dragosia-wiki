@@ -54,10 +54,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["@dragosia/eslint-config", "workspace:packages/eslint-config"],\
-            ["@trivago/prettier-plugin-sort-imports", "virtual:d01c8d2a5810d47abd03509b5dfdb6ab7f6d5f0754ba81541601cff502ab41ed4432837fb79173b4d9a5bdd2901fe5236bee48db31ba2124d40084e328df84e6#npm:3.4.0"],\
+            ["@trivago/prettier-plugin-sort-imports", "virtual:be60b51821945ede6fe6e3c97f96e2b0ec75a6070b2b3907c6f193642a5eacad4496b232883743c14126bcdbb4d012f839c06c1034d6cb385eb6b6af396b81e9#npm:4.0.0"],\
             ["eslint", "npm:8.31.0"],\
             ["prettier", "npm:2.8.1"],\
-            ["prettier-plugin-packagejson", "virtual:d01c8d2a5810d47abd03509b5dfdb6ab7f6d5f0754ba81541601cff502ab41ed4432837fb79173b4d9a5bdd2901fe5236bee48db31ba2124d40084e328df84e6#npm:2.3.0"],\
+            ["prettier-plugin-packagejson", "virtual:be60b51821945ede6fe6e3c97f96e2b0ec75a6070b2b3907c6f193642a5eacad4496b232883743c14126bcdbb4d012f839c06c1034d6cb385eb6b6af396b81e9#npm:2.3.0"],\
             ["turbo", "npm:1.6.3"],\
             ["typescript", "patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=ad5954"]\
           ],\
@@ -480,11 +480,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/eslint-config/",\
           "packageDependencies": [\
             ["@dragosia/eslint-config", "workspace:packages/eslint-config"],\
+            ["@trivago/prettier-plugin-sort-imports", "virtual:ec8d11f8641646c9ce4f9a5a029d701867e9864e1ac233598c0c7a5e84692704fa3de5c5adeec9c11e79f986c9b549eec6c44c7c37f6ecb14da19e252bebe53e#npm:4.0.0"],\
             ["eslint", "npm:8.31.0"],\
             ["eslint-config-next", "virtual:ec8d11f8641646c9ce4f9a5a029d701867e9864e1ac233598c0c7a5e84692704fa3de5c5adeec9c11e79f986c9b549eec6c44c7c37f6ecb14da19e252bebe53e#npm:13.1.1"],\
             ["eslint-config-prettier", "virtual:ec8d11f8641646c9ce4f9a5a029d701867e9864e1ac233598c0c7a5e84692704fa3de5c5adeec9c11e79f986c9b549eec6c44c7c37f6ecb14da19e252bebe53e#npm:8.5.0"],\
             ["eslint-config-turbo", "virtual:ec8d11f8641646c9ce4f9a5a029d701867e9864e1ac233598c0c7a5e84692704fa3de5c5adeec9c11e79f986c9b549eec6c44c7c37f6ecb14da19e252bebe53e#npm:0.0.7"],\
             ["eslint-plugin-react", "virtual:ec8d11f8641646c9ce4f9a5a029d701867e9864e1ac233598c0c7a5e84692704fa3de5c5adeec9c11e79f986c9b549eec6c44c7c37f6ecb14da19e252bebe53e#npm:7.31.11"],\
+            ["prettier-plugin-packagejson", "virtual:ec8d11f8641646c9ce4f9a5a029d701867e9864e1ac233598c0c7a5e84692704fa3de5c5adeec9c11e79f986c9b549eec6c44c7c37f6ecb14da19e252bebe53e#npm:2.3.0"],\
             ["typescript", "patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=ad5954"]\
           ],\
           "linkType": "SOFT"\
@@ -497,9 +499,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@dragosia/firebase", "workspace:packages/firebase"],\
             ["@dragosia/eslint-config", "workspace:packages/eslint-config"],\
             ["@dragosia/tsconfig", "workspace:packages/tsconfig"],\
+            ["@trivago/prettier-plugin-sort-imports", "virtual:ec8d11f8641646c9ce4f9a5a029d701867e9864e1ac233598c0c7a5e84692704fa3de5c5adeec9c11e79f986c9b549eec6c44c7c37f6ecb14da19e252bebe53e#npm:4.0.0"],\
             ["@types/react", "npm:18.0.26"],\
             ["eslint", "npm:8.31.0"],\
             ["firebase", "npm:9.15.0"],\
+            ["prettier-plugin-packagejson", "virtual:ec8d11f8641646c9ce4f9a5a029d701867e9864e1ac233598c0c7a5e84692704fa3de5c5adeec9c11e79f986c9b549eec6c44c7c37f6ecb14da19e252bebe53e#npm:2.3.0"],\
             ["react", "npm:18.2.0"],\
             ["react-firebase-hooks", "virtual:bfeb3bdc0547972846fb95bcfbf74b25d4dd91f133a291a981b26bb0f0ab0920159718c9f662f6c2d8dfca816737c913c4a3109a0ca218cb0093502d21cad093#npm:5.1.1"],\
             ["typescript", "patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=ad5954"]\
@@ -511,7 +515,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ["workspace:packages/tsconfig", {\
           "packageLocation": "./packages/tsconfig/",\
           "packageDependencies": [\
-            ["@dragosia/tsconfig", "workspace:packages/tsconfig"]\
+            ["@dragosia/tsconfig", "workspace:packages/tsconfig"],\
+            ["@trivago/prettier-plugin-sort-imports", "virtual:ec8d11f8641646c9ce4f9a5a029d701867e9864e1ac233598c0c7a5e84692704fa3de5c5adeec9c11e79f986c9b549eec6c44c7c37f6ecb14da19e252bebe53e#npm:4.0.0"],\
+            ["prettier-plugin-packagejson", "virtual:ec8d11f8641646c9ce4f9a5a029d701867e9864e1ac233598c0c7a5e84692704fa3de5c5adeec9c11e79f986c9b549eec6c44c7c37f6ecb14da19e252bebe53e#npm:2.3.0"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -531,11 +537,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@fontsource/roboto", "npm:4.5.8"],\
             ["@mui/icons-material", "virtual:1b132184d5274bc8b959b2fe7c83a5c4a93c7d0a3285a0682924eecb8d4346f200a806f94a9c47fd232786f904b16eb7a12a819fccc2748787db4d3fcbf15565#npm:5.11.0"],\
             ["@mui/material", "virtual:1b132184d5274bc8b959b2fe7c83a5c4a93c7d0a3285a0682924eecb8d4346f200a806f94a9c47fd232786f904b16eb7a12a819fccc2748787db4d3fcbf15565#npm:5.11.3"],\
+            ["@trivago/prettier-plugin-sort-imports", "virtual:ec8d11f8641646c9ce4f9a5a029d701867e9864e1ac233598c0c7a5e84692704fa3de5c5adeec9c11e79f986c9b549eec6c44c7c37f6ecb14da19e252bebe53e#npm:4.0.0"],\
             ["@types/react", "npm:18.0.26"],\
             ["@types/react-dom", "npm:18.0.10"],\
             ["clsx", "npm:1.2.1"],\
             ["eslint", "npm:8.31.0"],\
             ["next", "virtual:1b132184d5274bc8b959b2fe7c83a5c4a93c7d0a3285a0682924eecb8d4346f200a806f94a9c47fd232786f904b16eb7a12a819fccc2748787db4d3fcbf15565#npm:13.1.1"],\
+            ["prettier-plugin-packagejson", "virtual:ec8d11f8641646c9ce4f9a5a029d701867e9864e1ac233598c0c7a5e84692704fa3de5c5adeec9c11e79f986c9b549eec6c44c7c37f6ecb14da19e252bebe53e#npm:2.3.0"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:1b132184d5274bc8b959b2fe7c83a5c4a93c7d0a3285a0682924eecb8d4346f200a806f94a9c47fd232786f904b16eb7a12a819fccc2748787db4d3fcbf15565#npm:18.2.0"],\
             ["typescript", "patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=ad5954"]\
@@ -562,6 +570,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@mdx-js/react", "virtual:c4e276f32502b1f303dda79a482d5d7eaa4e69ef748c0918a0ac6db7d940c18adb2bfaec0aa44c1735a085a657b3c441ce6671140b30986863c3414cb67924db#npm:2.2.1"],\
             ["@mui/material", "virtual:1b132184d5274bc8b959b2fe7c83a5c4a93c7d0a3285a0682924eecb8d4346f200a806f94a9c47fd232786f904b16eb7a12a819fccc2748787db4d3fcbf15565#npm:5.11.3"],\
             ["@next/mdx", "virtual:c4e276f32502b1f303dda79a482d5d7eaa4e69ef748c0918a0ac6db7d940c18adb2bfaec0aa44c1735a085a657b3c441ce6671140b30986863c3414cb67924db#npm:13.1.1"],\
+            ["@trivago/prettier-plugin-sort-imports", "virtual:ec8d11f8641646c9ce4f9a5a029d701867e9864e1ac233598c0c7a5e84692704fa3de5c5adeec9c11e79f986c9b549eec6c44c7c37f6ecb14da19e252bebe53e#npm:4.0.0"],\
             ["@types/glob", "npm:8.0.0"],\
             ["@types/mdx", "npm:2.0.3"],\
             ["@types/node", "npm:18.11.18"],\
@@ -573,6 +582,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["glob-promise", "virtual:c4e276f32502b1f303dda79a482d5d7eaa4e69ef748c0918a0ac6db7d940c18adb2bfaec0aa44c1735a085a657b3c441ce6671140b30986863c3414cb67924db#npm:6.0.1"],\
             ["mdx", "npm:0.3.1"],\
             ["next", "virtual:1b132184d5274bc8b959b2fe7c83a5c4a93c7d0a3285a0682924eecb8d4346f200a806f94a9c47fd232786f904b16eb7a12a819fccc2748787db4d3fcbf15565#npm:13.1.1"],\
+            ["prettier-plugin-packagejson", "virtual:ec8d11f8641646c9ce4f9a5a029d701867e9864e1ac233598c0c7a5e84692704fa3de5c5adeec9c11e79f986c9b549eec6c44c7c37f6ecb14da19e252bebe53e#npm:2.3.0"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:1b132184d5274bc8b959b2fe7c83a5c4a93c7d0a3285a0682924eecb8d4346f200a806f94a9c47fd232786f904b16eb7a12a819fccc2748787db4d3fcbf15565#npm:18.2.0"],\
             ["recma-nextjs-static-props", "npm:1.0.0"],\
@@ -2741,30 +2751,57 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@trivago/prettier-plugin-sort-imports", [\
-        ["npm:3.4.0", {\
-          "packageLocation": "./.yarn/cache/@trivago-prettier-plugin-sort-imports-npm-3.4.0-62f73dbe3a-ed72f8fbf7.zip/node_modules/@trivago/prettier-plugin-sort-imports/",\
+        ["npm:4.0.0", {\
+          "packageLocation": "./.yarn/cache/@trivago-prettier-plugin-sort-imports-npm-4.0.0-fc45d9da22-c1e27aa1f3.zip/node_modules/@trivago/prettier-plugin-sort-imports/",\
           "packageDependencies": [\
-            ["@trivago/prettier-plugin-sort-imports", "npm:3.4.0"]\
+            ["@trivago/prettier-plugin-sort-imports", "npm:4.0.0"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:d01c8d2a5810d47abd03509b5dfdb6ab7f6d5f0754ba81541601cff502ab41ed4432837fb79173b4d9a5bdd2901fe5236bee48db31ba2124d40084e328df84e6#npm:3.4.0", {\
-          "packageLocation": "./.yarn/__virtual__/@trivago-prettier-plugin-sort-imports-virtual-3bc7525b86/0/cache/@trivago-prettier-plugin-sort-imports-npm-3.4.0-62f73dbe3a-ed72f8fbf7.zip/node_modules/@trivago/prettier-plugin-sort-imports/",\
+        ["virtual:be60b51821945ede6fe6e3c97f96e2b0ec75a6070b2b3907c6f193642a5eacad4496b232883743c14126bcdbb4d012f839c06c1034d6cb385eb6b6af396b81e9#npm:4.0.0", {\
+          "packageLocation": "./.yarn/__virtual__/@trivago-prettier-plugin-sort-imports-virtual-19e0599b5b/0/cache/@trivago-prettier-plugin-sort-imports-npm-4.0.0-fc45d9da22-c1e27aa1f3.zip/node_modules/@trivago/prettier-plugin-sort-imports/",\
           "packageDependencies": [\
-            ["@trivago/prettier-plugin-sort-imports", "virtual:d01c8d2a5810d47abd03509b5dfdb6ab7f6d5f0754ba81541601cff502ab41ed4432837fb79173b4d9a5bdd2901fe5236bee48db31ba2124d40084e328df84e6#npm:3.4.0"],\
+            ["@trivago/prettier-plugin-sort-imports", "virtual:be60b51821945ede6fe6e3c97f96e2b0ec75a6070b2b3907c6f193642a5eacad4496b232883743c14126bcdbb4d012f839c06c1034d6cb385eb6b6af396b81e9#npm:4.0.0"],\
             ["@babel/core", "npm:7.17.8"],\
             ["@babel/generator", "npm:7.17.7"],\
             ["@babel/parser", "npm:7.18.9"],\
             ["@babel/traverse", "npm:7.17.3"],\
             ["@babel/types", "npm:7.17.0"],\
             ["@types/prettier", null],\
-            ["@vue/compiler-sfc", "npm:3.2.45"],\
+            ["@types/vue__compiler-sfc", null],\
+            ["@vue/compiler-sfc", null],\
             ["javascript-natural-sort", "npm:0.7.1"],\
             ["lodash", "npm:4.17.21"],\
             ["prettier", "npm:2.8.1"]\
           ],\
           "packagePeers": [\
             "@types/prettier",\
+            "@types/vue__compiler-sfc",\
+            "@vue/compiler-sfc",\
+            "prettier"\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["virtual:ec8d11f8641646c9ce4f9a5a029d701867e9864e1ac233598c0c7a5e84692704fa3de5c5adeec9c11e79f986c9b549eec6c44c7c37f6ecb14da19e252bebe53e#npm:4.0.0", {\
+          "packageLocation": "./.yarn/__virtual__/@trivago-prettier-plugin-sort-imports-virtual-5791093383/0/cache/@trivago-prettier-plugin-sort-imports-npm-4.0.0-fc45d9da22-c1e27aa1f3.zip/node_modules/@trivago/prettier-plugin-sort-imports/",\
+          "packageDependencies": [\
+            ["@trivago/prettier-plugin-sort-imports", "virtual:ec8d11f8641646c9ce4f9a5a029d701867e9864e1ac233598c0c7a5e84692704fa3de5c5adeec9c11e79f986c9b549eec6c44c7c37f6ecb14da19e252bebe53e#npm:4.0.0"],\
+            ["@babel/core", "npm:7.17.8"],\
+            ["@babel/generator", "npm:7.17.7"],\
+            ["@babel/parser", "npm:7.18.9"],\
+            ["@babel/traverse", "npm:7.17.3"],\
+            ["@babel/types", "npm:7.17.0"],\
+            ["@types/prettier", null],\
+            ["@types/vue__compiler-sfc", null],\
+            ["@vue/compiler-sfc", null],\
+            ["javascript-natural-sort", "npm:0.7.1"],\
+            ["lodash", "npm:4.17.21"],\
+            ["prettier", null]\
+          ],\
+          "packagePeers": [\
+            "@types/prettier",\
+            "@types/vue__compiler-sfc",\
+            "@vue/compiler-sfc",\
             "prettier"\
           ],\
           "linkType": "HARD"\
@@ -3105,83 +3142,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/visitor-keys", "npm:5.47.1"],\
             ["@typescript-eslint/types", "npm:5.47.1"],\
             ["eslint-visitor-keys", "npm:3.3.0"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["@vue/compiler-core", [\
-        ["npm:3.2.45", {\
-          "packageLocation": "./.yarn/cache/@vue-compiler-core-npm-3.2.45-2a68bebbd0-e3c687b24c.zip/node_modules/@vue/compiler-core/",\
-          "packageDependencies": [\
-            ["@vue/compiler-core", "npm:3.2.45"],\
-            ["@babel/parser", "npm:7.20.7"],\
-            ["@vue/shared", "npm:3.2.45"],\
-            ["estree-walker", "npm:2.0.2"],\
-            ["source-map", "npm:0.6.1"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["@vue/compiler-dom", [\
-        ["npm:3.2.45", {\
-          "packageLocation": "./.yarn/cache/@vue-compiler-dom-npm-3.2.45-e742186d0b-8911553863.zip/node_modules/@vue/compiler-dom/",\
-          "packageDependencies": [\
-            ["@vue/compiler-dom", "npm:3.2.45"],\
-            ["@vue/compiler-core", "npm:3.2.45"],\
-            ["@vue/shared", "npm:3.2.45"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["@vue/compiler-sfc", [\
-        ["npm:3.2.45", {\
-          "packageLocation": "./.yarn/cache/@vue-compiler-sfc-npm-3.2.45-f1fe8426df-bec375faa0.zip/node_modules/@vue/compiler-sfc/",\
-          "packageDependencies": [\
-            ["@vue/compiler-sfc", "npm:3.2.45"],\
-            ["@babel/parser", "npm:7.20.7"],\
-            ["@vue/compiler-core", "npm:3.2.45"],\
-            ["@vue/compiler-dom", "npm:3.2.45"],\
-            ["@vue/compiler-ssr", "npm:3.2.45"],\
-            ["@vue/reactivity-transform", "npm:3.2.45"],\
-            ["@vue/shared", "npm:3.2.45"],\
-            ["estree-walker", "npm:2.0.2"],\
-            ["magic-string", "npm:0.25.9"],\
-            ["postcss", "npm:8.4.20"],\
-            ["source-map", "npm:0.6.1"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["@vue/compiler-ssr", [\
-        ["npm:3.2.45", {\
-          "packageLocation": "./.yarn/cache/@vue-compiler-ssr-npm-3.2.45-0b951e5028-830c475506.zip/node_modules/@vue/compiler-ssr/",\
-          "packageDependencies": [\
-            ["@vue/compiler-ssr", "npm:3.2.45"],\
-            ["@vue/compiler-dom", "npm:3.2.45"],\
-            ["@vue/shared", "npm:3.2.45"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["@vue/reactivity-transform", [\
-        ["npm:3.2.45", {\
-          "packageLocation": "./.yarn/cache/@vue-reactivity-transform-npm-3.2.45-05914b9134-4010408189.zip/node_modules/@vue/reactivity-transform/",\
-          "packageDependencies": [\
-            ["@vue/reactivity-transform", "npm:3.2.45"],\
-            ["@babel/parser", "npm:7.20.7"],\
-            ["@vue/compiler-core", "npm:3.2.45"],\
-            ["@vue/shared", "npm:3.2.45"],\
-            ["estree-walker", "npm:2.0.2"],\
-            ["magic-string", "npm:0.25.9"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["@vue/shared", [\
-        ["npm:3.2.45", {\
-          "packageLocation": "./.yarn/cache/@vue-shared-npm-3.2.45-1855c9c551-ff3205056c.zip/node_modules/@vue/shared/",\
-          "packageDependencies": [\
-            ["@vue/shared", "npm:3.2.45"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -4419,10 +4379,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["dragosia", "workspace:."],\
             ["@dragosia/eslint-config", "workspace:packages/eslint-config"],\
-            ["@trivago/prettier-plugin-sort-imports", "virtual:d01c8d2a5810d47abd03509b5dfdb6ab7f6d5f0754ba81541601cff502ab41ed4432837fb79173b4d9a5bdd2901fe5236bee48db31ba2124d40084e328df84e6#npm:3.4.0"],\
+            ["@trivago/prettier-plugin-sort-imports", "virtual:be60b51821945ede6fe6e3c97f96e2b0ec75a6070b2b3907c6f193642a5eacad4496b232883743c14126bcdbb4d012f839c06c1034d6cb385eb6b6af396b81e9#npm:4.0.0"],\
             ["eslint", "npm:8.31.0"],\
             ["prettier", "npm:2.8.1"],\
-            ["prettier-plugin-packagejson", "virtual:d01c8d2a5810d47abd03509b5dfdb6ab7f6d5f0754ba81541601cff502ab41ed4432837fb79173b4d9a5bdd2901fe5236bee48db31ba2124d40084e328df84e6#npm:2.3.0"],\
+            ["prettier-plugin-packagejson", "virtual:be60b51821945ede6fe6e3c97f96e2b0ec75a6070b2b3907c6f193642a5eacad4496b232883743c14126bcdbb4d012f839c06c1034d6cb385eb6b6af396b81e9#npm:2.3.0"],\
             ["turbo", "npm:1.6.3"],\
             ["typescript", "patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=ad5954"]\
           ],\
@@ -5149,13 +5109,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["estree-walker", [\
-        ["npm:2.0.2", {\
-          "packageLocation": "./.yarn/cache/estree-walker-npm-2.0.2-dfab42f65c-6151e6f982.zip/node_modules/estree-walker/",\
-          "packageDependencies": [\
-            ["estree-walker", "npm:2.0.2"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["npm:3.0.1", {\
           "packageLocation": "./.yarn/cache/estree-walker-npm-3.0.1-f100136724-6740969508.zip/node_modules/estree-walker/",\
           "packageDependencies": [\
@@ -6677,16 +6630,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/lru-cache-npm-7.14.1-d3ba9407b6-d72c6713c6.zip/node_modules/lru-cache/",\
           "packageDependencies": [\
             ["lru-cache", "npm:7.14.1"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["magic-string", [\
-        ["npm:0.25.9", {\
-          "packageLocation": "./.yarn/cache/magic-string-npm-0.25.9-0b51c0ea50-9a0e55a15c.zip/node_modules/magic-string/",\
-          "packageDependencies": [\
-            ["magic-string", "npm:0.25.9"],\
-            ["sourcemap-codec", "npm:1.4.8"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -8329,16 +8272,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["source-map-js", "npm:1.0.2"]\
           ],\
           "linkType": "HARD"\
-        }],\
-        ["npm:8.4.20", {\
-          "packageLocation": "./.yarn/cache/postcss-npm-8.4.20-b87cd5ecc8-1a5609ea1c.zip/node_modules/postcss/",\
-          "packageDependencies": [\
-            ["postcss", "npm:8.4.20"],\
-            ["nanoid", "npm:3.3.4"],\
-            ["picocolors", "npm:1.0.0"],\
-            ["source-map-js", "npm:1.0.2"]\
-          ],\
-          "linkType": "HARD"\
         }]\
       ]],\
       ["prebuild-install", [\
@@ -8375,7 +8308,9 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         ["npm:2.8.1", {\
           "packageLocation": "./.yarn/cache/prettier-npm-2.8.1-be60b51821-4f21a0f126.zip/node_modules/prettier/",\
           "packageDependencies": [\
-            ["prettier", "npm:2.8.1"]\
+            ["prettier", "npm:2.8.1"],\
+            ["@trivago/prettier-plugin-sort-imports", "virtual:be60b51821945ede6fe6e3c97f96e2b0ec75a6070b2b3907c6f193642a5eacad4496b232883743c14126bcdbb4d012f839c06c1034d6cb385eb6b6af396b81e9#npm:4.0.0"],\
+            ["prettier-plugin-packagejson", "virtual:be60b51821945ede6fe6e3c97f96e2b0ec75a6070b2b3907c6f193642a5eacad4496b232883743c14126bcdbb4d012f839c06c1034d6cb385eb6b6af396b81e9#npm:2.3.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -8388,12 +8323,26 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:d01c8d2a5810d47abd03509b5dfdb6ab7f6d5f0754ba81541601cff502ab41ed4432837fb79173b4d9a5bdd2901fe5236bee48db31ba2124d40084e328df84e6#npm:2.3.0", {\
-          "packageLocation": "./.yarn/__virtual__/prettier-plugin-packagejson-virtual-7f95899913/0/cache/prettier-plugin-packagejson-npm-2.3.0-da8e8313b1-fbcf81cedc.zip/node_modules/prettier-plugin-packagejson/",\
+        ["virtual:be60b51821945ede6fe6e3c97f96e2b0ec75a6070b2b3907c6f193642a5eacad4496b232883743c14126bcdbb4d012f839c06c1034d6cb385eb6b6af396b81e9#npm:2.3.0", {\
+          "packageLocation": "./.yarn/__virtual__/prettier-plugin-packagejson-virtual-5c4dd6366f/0/cache/prettier-plugin-packagejson-npm-2.3.0-da8e8313b1-fbcf81cedc.zip/node_modules/prettier-plugin-packagejson/",\
           "packageDependencies": [\
-            ["prettier-plugin-packagejson", "virtual:d01c8d2a5810d47abd03509b5dfdb6ab7f6d5f0754ba81541601cff502ab41ed4432837fb79173b4d9a5bdd2901fe5236bee48db31ba2124d40084e328df84e6#npm:2.3.0"],\
+            ["prettier-plugin-packagejson", "virtual:be60b51821945ede6fe6e3c97f96e2b0ec75a6070b2b3907c6f193642a5eacad4496b232883743c14126bcdbb4d012f839c06c1034d6cb385eb6b6af396b81e9#npm:2.3.0"],\
             ["@types/prettier", null],\
             ["prettier", "npm:2.8.1"],\
+            ["sort-package-json", "npm:1.57.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/prettier",\
+            "prettier"\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["virtual:ec8d11f8641646c9ce4f9a5a029d701867e9864e1ac233598c0c7a5e84692704fa3de5c5adeec9c11e79f986c9b549eec6c44c7c37f6ecb14da19e252bebe53e#npm:2.3.0", {\
+          "packageLocation": "./.yarn/__virtual__/prettier-plugin-packagejson-virtual-11ebc163fc/0/cache/prettier-plugin-packagejson-npm-2.3.0-da8e8313b1-fbcf81cedc.zip/node_modules/prettier-plugin-packagejson/",\
+          "packageDependencies": [\
+            ["prettier-plugin-packagejson", "virtual:ec8d11f8641646c9ce4f9a5a029d701867e9864e1ac233598c0c7a5e84692704fa3de5c5adeec9c11e79f986c9b549eec6c44c7c37f6ecb14da19e252bebe53e#npm:2.3.0"],\
+            ["@types/prettier", null],\
+            ["prettier", null],\
             ["sort-package-json", "npm:1.57.0"]\
           ],\
           "packagePeers": [\
@@ -9249,15 +9198,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["source-map-support", "npm:0.5.21"],\
             ["buffer-from", "npm:1.1.2"],\
             ["source-map", "npm:0.6.1"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["sourcemap-codec", [\
-        ["npm:1.4.8", {\
-          "packageLocation": "./.yarn/cache/sourcemap-codec-npm-1.4.8-3a1a9e60b1-b57981c056.zip/node_modules/sourcemap-codec/",\
-          "packageDependencies": [\
-            ["sourcemap-codec", "npm:1.4.8"]\
           ],\
           "linkType": "HARD"\
         }]\
