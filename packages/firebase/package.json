@@ -13,8 +13,8 @@
         "react-firebase-hooks": "^5.1.1"
     },
     "devDependencies": {
-        "@dragosia/eslint-config": "*",
-        "@dragosia/tsconfig": "*",
+        "@dragosia/eslint-config": "workspace:*",
+        "@dragosia/tsconfig": "workspace:*",
         "@types/react": "18.0.26",
         "eslint": "^8.31.0",
         "typescript": "^4.9.4"
