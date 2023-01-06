@@ -220,6 +220,15 @@ export const THEME = responsiveFontSizes(
                         }
                     }
                 }
+            },
+            MuiInputLabel: {
+                styleOverrides: {
+                    root: {
+                        '&.Mui-focused': {
+                            color: palette.text.accent
+                        }
+                    }
+                }
             }
         }
     })

@@ -551,6 +551,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["prettier-plugin-packagejson", "virtual:ec8d11f8641646c9ce4f9a5a029d701867e9864e1ac233598c0c7a5e84692704fa3de5c5adeec9c11e79f986c9b549eec6c44c7c37f6ecb14da19e252bebe53e#npm:2.3.0"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:1b132184d5274bc8b959b2fe7c83a5c4a93c7d0a3285a0682924eecb8d4346f200a806f94a9c47fd232786f904b16eb7a12a819fccc2748787db4d3fcbf15565#npm:18.2.0"],\
+            ["react-hook-form", "virtual:1b132184d5274bc8b959b2fe7c83a5c4a93c7d0a3285a0682924eecb8d4346f200a806f94a9c47fd232786f904b16eb7a12a819fccc2748787db4d3fcbf15565#npm:7.41.5"],\
             ["react-markdown", "virtual:1b132184d5274bc8b959b2fe7c83a5c4a93c7d0a3285a0682924eecb8d4346f200a806f94a9c47fd232786f904b16eb7a12a819fccc2748787db4d3fcbf15565#npm:8.0.4"],\
             ["react-query", "virtual:1b132184d5274bc8b959b2fe7c83a5c4a93c7d0a3285a0682924eecb8d4346f200a806f94a9c47fd232786f904b16eb7a12a819fccc2748787db4d3fcbf15565#npm:3.39.2"],\
             ["typescript", "patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=ad5954"]\
@@ -8737,6 +8738,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "@types/firebase",\
             "@types/react",\
             "firebase",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["react-hook-form", [\
+        ["npm:7.41.5", {\
+          "packageLocation": "./.yarn/cache/react-hook-form-npm-7.41.5-202ce9fe72-ca28b2deb4.zip/node_modules/react-hook-form/",\
+          "packageDependencies": [\
+            ["react-hook-form", "npm:7.41.5"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:1b132184d5274bc8b959b2fe7c83a5c4a93c7d0a3285a0682924eecb8d4346f200a806f94a9c47fd232786f904b16eb7a12a819fccc2748787db4d3fcbf15565#npm:7.41.5", {\
+          "packageLocation": "./.yarn/__virtual__/react-hook-form-virtual-5b2104d504/0/cache/react-hook-form-npm-7.41.5-202ce9fe72-ca28b2deb4.zip/node_modules/react-hook-form/",\
+          "packageDependencies": [\
+            ["react-hook-form", "virtual:1b132184d5274bc8b959b2fe7c83a5c4a93c7d0a3285a0682924eecb8d4346f200a806f94a9c47fd232786f904b16eb7a12a819fccc2748787db4d3fcbf15565#npm:7.41.5"],\
+            ["@types/react", "npm:18.0.26"],\
+            ["react", "npm:18.2.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
             "react"\
           ],\
           "linkType": "HARD"\

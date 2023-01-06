@@ -1,8 +1,10 @@
 import { AccountCircle } from '@mui/icons-material';
-import { Avatar, Box, BoxProps, Button, IconButton, Menu, MenuItem, Typography } from '@mui/material';
+import { Avatar, Box, BoxProps, IconButton, Menu, MenuItem, Typography } from '@mui/material';
 import React from 'react';
 
-import { signInWithGoogle, signOut, useCurrentAuth } from '@dragosia/firebase';
+import { signOut, useCurrentAuth } from '@dragosia/firebase';
+
+import { Link } from './Link';
 
 export const AuthMenu: React.FunctionComponent<BoxProps> = props => {
     const auth = useCurrentAuth();
@@ -18,10 +20,11 @@ export const AuthMenu: React.FunctionComponent<BoxProps> = props => {
 
     return (
         <Box {...props}>
+            {!auth && <Link href="/login">Login</Link>}
             {!auth && (
-                <Button onClick={signInWithGoogle} color="inherit">
-                    Login
-                </Button>
+                <Link href="/register" sx={{ ml: 2 }}>
+                    Registrieren
+                </Link>
             )}
             {auth && (
                 <>
