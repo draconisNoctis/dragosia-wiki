@@ -9,10 +9,6 @@ export async function signInWithGoogle() {
     return signInWithPopup(firebaseAuth, new GoogleAuthProvider());
 }
 
-export function useAuthState() {
-    return _useAuthState(firebaseAuth);
-}
-
 export function signOut() {
     return _signOut(firebaseAuth);
 }

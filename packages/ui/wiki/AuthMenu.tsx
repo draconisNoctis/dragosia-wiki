@@ -1,11 +1,11 @@
 import { AccountCircle } from '@mui/icons-material';
-import { AppBar, Avatar, Box, BoxProps, Button, Container, IconButton, Menu, MenuItem, Toolbar, Typography } from '@mui/material';
+import { Avatar, Box, BoxProps, Button, IconButton, Menu, MenuItem, Typography } from '@mui/material';
 import React from 'react';
 
-import { signInWithGoogle, signOut, useAuthState } from '@dragosia/firebase';
+import { signInWithGoogle, signOut, useCurrentAuth } from '@dragosia/firebase';
 
 export const AuthMenu: React.FunctionComponent<BoxProps> = props => {
-    const [user] = useAuthState();
+    const auth = useCurrentAuth();
     const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 
     const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -18,16 +18,16 @@ export const AuthMenu: React.FunctionComponent<BoxProps> = props => {
 
     return (
         <Box {...props}>
-            {!user && (
+            {!auth && (
                 <Button onClick={signInWithGoogle} color="inherit">
                     Login
                 </Button>
             )}
-            {user && (
+            {auth && (
                 <>
                     <IconButton sx={{ p: 0 }} onClick={handleOpenUserMenu}>
-                        {user.photoURL && <Avatar alt={user.displayName ?? user.email ?? undefined} src={user.photoURL} />}
-                        {!user.photoURL && <AccountCircle />}
+                        {auth.photoURL && <Avatar alt={auth.displayName ?? auth.email ?? undefined} src={auth.photoURL} />}
+                        {!auth.photoURL && <AccountCircle />}
                     </IconButton>
                     <Menu
                         sx={{ mt: '45px' }}

@@ -20,6 +20,7 @@ export interface CommentData {
 
 export interface UserData {
     username: string;
+    roles?: string[];
 }
 
 export const collections = {

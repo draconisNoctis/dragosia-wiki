@@ -10,7 +10,7 @@ import type { MDXComponents } from 'mdx/types';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 
-import { QueryClient, QueryClientProvider } from '@dragosia/firebase';
+import { CurrentUserProvider, QueryClient, QueryClientProvider } from '@dragosia/firebase';
 import { Link, THEME, createEmotionCache } from '@dragosia/ui';
 
 const clientSideEmotionCache = createEmotionCache();
@@ -59,8 +59,10 @@ export default function App({ Component, pageProps, emotionCache = clientSideEmo
                 <MDXProvider components={components}>
                     <ThemeProvider theme={THEME}>
                         <QueryClientProvider client={queryClient}>
-                            <CssBaseline />
-                            <Component {...pageProps} />
+                            <CurrentUserProvider>
+                                <CssBaseline />
+                                <Component {...pageProps} />
+                            </CurrentUserProvider>
                         </QueryClientProvider>
                     </ThemeProvider>
                 </MDXProvider>

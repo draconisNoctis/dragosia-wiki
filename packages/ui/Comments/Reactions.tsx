@@ -2,7 +2,7 @@ import { AddReactionOutlined } from '@mui/icons-material';
 import { Badge, Box, BoxProps, Button, IconButton, Menu, MenuItem } from '@mui/material';
 import React from 'react';
 
-import { addReaction, removeReaction, useAuthState, useQueryReactionsByParent } from '@dragosia/firebase';
+import { addReaction, removeReaction, useCurrentAuth, useQueryReactionsByParent } from '@dragosia/firebase';
 
 const REACTIONS = ['👍', '👎', '😂', '🙁', '😡', '❤️', '😲', '🤯'];
 
@@ -12,7 +12,7 @@ export const Reactions: React.FunctionComponent<{ domain: string; parent: string
     sx,
     ...props
 }) => {
-    const [auth] = useAuthState();
+    const auth = useCurrentAuth();
     const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 
     const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
