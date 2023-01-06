@@ -1,0 +1,17 @@
+import { WikiPageMeta, WikiPageWrapper } from '@dragosia/ui';
+import { getPages } from '@dragosia/wiki';
+
+export const meta = {
+    title: 'Kreismeer',
+    tags: ['geographica']
+};
+export const getStaticProps = WikiPageWrapper.staticProps(() => getPages('wiki/**/*'));
+export default WikiPageWrapper(meta);
+
+# Kreismeer
+
+Das Kreismeer ist ein großer Ozean in der Mitte von [Dragosia](/wiki/geographica/dragosia).
+Es ist von vielen kleineren Inseln umgeben und beherbergt eine Vielzahl verschiedener Meereslebewesen.
+In seinem Zentrum befindet sich der gefürchtete [Maelstrom](/wiki/geographica/grosse_maelstrom), ein Wasserstrudel, der viele unvorsichtige Seefahrer in seine Tiefen gerissen hat.
+Das Kreismeer ist auch Heimat vieler Häfen und Handelsstädte, die sich entlang seiner Küsten befinden.
+Seine Gewässer sind für ihre hohe Seegangsbildung und schnellen Wetterwechsel bekannt und daher oft nur für erfahrene Seefahrer zugänglich.

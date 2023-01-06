@@ -1,0 +1,19 @@
+import { WikiPageMeta, WikiPageWrapper } from '@dragosia/ui';
+import { getPages } from '@dragosia/wiki';
+
+export const meta = {
+    title: 'Nebelgebirge',
+    tags: ['geographica']
+};
+export const getStaticProps = WikiPageWrapper.staticProps(() => getPages('wiki/**/*'));
+export default WikiPageWrapper(meta);
+
+# Nebelgebirge
+
+Das Nebelgebirge ist eine riesige Gebirgskette im Norden von [Dragosia](/wiki/geographica/dragosia).
+Es ist bekannt für seine dichten Nebel, die fast immer über den Bergen hängen und die Sicht stark einschränken.
+Das Klima im Nebelgebirge ist kühl und feucht, was dazu beiträgt, dass die Pflanzenwelt dort sehr üppig ist.
+Es gibt viele Gletscher und Schnee bedeckte Gipfel.
+Die Tiere, die in dieser Region leben, sind an die raue Umgebung angepasst und es gibt viele seltene und einzigartige Arten.
+Das Nebelgebirge ist auch bekannt für seine Vielzahl an Edelsteinen und Mineralien, die in den Bergen abgebaut werden.
+Die Zwerge haben in diesem Gebirge eine ihrer riesigen unterirdischen Städte errichtet und sind die Meister im Abbau von Edelsteinen und in der Herstellung von Schmuck.

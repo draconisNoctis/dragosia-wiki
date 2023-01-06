@@ -1,0 +1,22 @@
+import { WikiPageMeta, WikiPageWrapper } from '@dragosia/ui';
+import { getPages } from '@dragosia/wiki';
+
+export const meta = {
+    title: 'Dragosia',
+    tags: ['geographica']
+};
+export const getStaticProps = WikiPageWrapper.staticProps(() => getPages('wiki/**/*'));
+export default WikiPageWrapper(meta);
+
+# Dragosia
+
+Der Kontinent Dragosia ist von verschiedenen Landschaften geprägt.
+Im Norden befinden sich die Gebirgszüge des [Nordlandreichs](/wiki/nordlandreich), über allen thront das massive Nebelgebirge.
+Noch weiter im Norden befindet sich eine undurchquerbare Eiswüste.
+Im Westen erstrecken sich die [Sümpfe des Elends](/wiki/geographica/suempfe_des_elends), in denen die [Orks](/wiki/voelker/orks) ihre Heimat gefunden haben.
+Im Südwesten erstrecken sich weitläufige Dschungelgebiete.
+Im Süden gibt es weite Ebenen und savannen- bis wüstenartige Gebiete.
+Der Osten ist von dichten Wäldern bedeckt.
+In der Mitte des Kontinents befindet sich das [Kreismeer](/wiki/geographica/kreismeer).
+Dragosien ist im Kreismeer, als auch im äußeren Meer von vielen verschiedenen Inseln gesäumt.
+Weite Teile des Kontinents sind noch unkartiert und unerforscht.
