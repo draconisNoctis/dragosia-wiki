@@ -12,7 +12,6 @@ export const PageHeader: React.FunctionComponent<React.PropsWithChildren<{ title
                 zIndex: '10',
                 position: 'relative',
                 boxShadow: '0 0 15px 5px rgba(0, 0, 0, .6)',
-                ml: { md: 2 },
                 mt: { md: 4 },
                 borderTopLeftRadius: { md: '16px' }
             }}>
@@ -22,10 +21,14 @@ export const PageHeader: React.FunctionComponent<React.PropsWithChildren<{ title
                         bgcolor: 'mainHeader.main',
                         gap: 4,
                         flexGrow: 1,
-                        '> a': { color: 'mainHeader.contrastText', '&:hover': { color: 'text.primary' } },
-                        borderTopLeftRadius: { md: '16px' }
+                        px: {
+                            xs: 2,
+                            sm: 4,
+                            md: 'calc((100vw - 800px) / 2 + 16px)'
+                        },
+                        '> a': { color: 'mainHeader.contrastText', '&:hover': { color: 'text.primary' } }
                     }}>
-                    <Link href="/" sx={{ typography: 'h1' }}>
+                    <Link href="/" sx={{ typography: 'h1', mb: 0 }}>
                         {title}
                     </Link>
                     <Link href="/wiki">Wiki</Link>
@@ -33,10 +36,16 @@ export const PageHeader: React.FunctionComponent<React.PropsWithChildren<{ title
                     <AuthMenu sx={{ ml: 'auto' }} />
                 </Toolbar>
                 <Toolbar
+                    variant="dense"
                     sx={{
                         bgcolor: 'subHeader.main',
                         gap: 4,
                         flexGrow: 1,
+                        px: {
+                            xs: 2,
+                            sm: 4,
+                            md: 'calc((100vw - 800px) / 2 + 16px)'
+                        },
                         '> a': { color: 'subHeader.contrastText', '&:hover': { color: 'text.secondary' } }
                     }}>
                     {children}
