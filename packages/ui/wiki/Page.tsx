@@ -1,4 +1,4 @@
-import { ThemeProvider } from '@mui/material';
+import { Divider, ThemeProvider, Typography } from '@mui/material';
 import Head from 'next/head';
 import React from 'react';
 
@@ -65,7 +65,13 @@ export const WikiPage: React.FunctionComponent<
                 <PageContent>
                     <WikiBreadcrumbs />
                     {children}
-                    {page && <Comments parent={page.link.replace(/\//g, '~')} root={true} />}
+                    {page && (
+                        <>
+                            <Divider sx={{ mb: 2 }} />
+                            <Typography variant="h3">Kommentare</Typography>
+                            <Comments parent={page.link.replace(/\//g, '~')} root={true} />
+                        </>
+                    )}
                 </PageContent>
             </PageWrapper>
         </WikiPageContext.Provider>

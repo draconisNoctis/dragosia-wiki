@@ -45,6 +45,7 @@ export const Reactions: React.FunctionComponent<{ domain: string; parent: string
             sx={[{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', gap: 1 }, ...(Array.isArray(sx) ? sx : [sx])]}>
             {Object.entries(reactions).map(([emoji, authors]) => (
                 <Badge key={emoji} badgeContent={authors.length} color="primary">
+                    {/* Use Chips instead of Buttons */}
                     <Button
                         variant="outlined"
                         sx={theme => ({
