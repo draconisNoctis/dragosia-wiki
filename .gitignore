@@ -13,6 +13,8 @@ coverage
 out/
 build
 .firebase
+!.firebase/firestore.rules
+!.firebase/firestore.indexes.json
 
 # misc
 .DS_Store

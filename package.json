@@ -12,6 +12,9 @@
         "format": "prettier --write \"**/*.{ts,tsx,md}\"",
         "lint": "turbo run lint"
     },
+    "resolutions": {
+        "debug": "4.3.4"
+    },
     "devDependencies": {
         "@dragosia/eslint-config": "workspace:*",
         "@trivago/prettier-plugin-sort-imports": "4.0.0",

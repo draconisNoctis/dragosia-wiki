@@ -1,19 +1,20 @@
-import { CacheProvider, EmotionCache, ThemeProvider } from '@emotion/react';
+import { CacheProvider, EmotionCache } from '@emotion/react';
 import '@fontsource/almendra';
-import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { MDXProvider } from '@mdx-js/react';
-import { CssBaseline, Typography } from '@mui/material';
+import { CssBaseline, ThemeProvider, Typography } from '@mui/material';
 import type { MDXComponents } from 'mdx/types';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 
+import { QueryClient, QueryClientProvider } from '@dragosia/firebase';
 import { Link, THEME, createEmotionCache } from '@dragosia/ui';
 
 const clientSideEmotionCache = createEmotionCache();
+const queryClient = new QueryClient();
 const components: MDXComponents = {
     a: ({ href = '#', target, children, id }) => <Link {...{ href, target, children, id }} />,
     h1: ({ id, children }) => (
@@ -57,8 +58,10 @@ export default function App({ Component, pageProps, emotionCache = clientSideEmo
                 </Head>
                 <MDXProvider components={components}>
                     <ThemeProvider theme={THEME}>
-                        <CssBaseline />
-                        <Component {...pageProps} />
+                        <QueryClientProvider client={queryClient}>
+                            <CssBaseline />
+                            <Component {...pageProps} />
+                        </QueryClientProvider>
                     </ThemeProvider>
                 </MDXProvider>
             </CacheProvider>

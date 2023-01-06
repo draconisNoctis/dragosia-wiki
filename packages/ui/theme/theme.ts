@@ -10,6 +10,7 @@ declare module '@mui/material/styles/createPalette' {
         page: string;
         button: string;
         paperGradient: string;
+        darken: string;
     }
 
     interface PaletteOptions {
@@ -42,13 +43,15 @@ const palette = {
         page: '#0d0c0d',
         paper: '#2b3033',
         paperGradient: 'linear-gradient(210deg, #3b3935 0%, #16232c 100%)',
-        button: '#151719'
+        button: '#151719',
+        darken: 'rgba(0, 0, 0, .3)'
     },
     text: {
         primary: '#e1e0da',
-        secondary: '#54534f',
+        secondary: '#94938f',
         accent: '#f5e9b1'
-    }
+    },
+    divider: 'rgba(255, 255, 255, 0.33)'
 } as const;
 
 export const THEME = responsiveFontSizes(
@@ -203,6 +206,18 @@ export const THEME = responsiveFontSizes(
                 styleOverrides: {
                     root: {
                         textDecoration: 'none'
+                    }
+                }
+            },
+            MuiInputBase: {
+                styleOverrides: {
+                    root: {
+                        '&.Mui-focused': {
+                            '& > fieldset.MuiOutlinedInput-notchedOutline': {
+                                borderColor: palette.text.accent,
+                                boxShadow: `0 0 0 1px ${palette.background.button}`
+                            }
+                        }
                     }
                 }
             }
