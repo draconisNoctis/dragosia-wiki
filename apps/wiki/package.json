@@ -40,6 +40,7 @@
         "@babel/core": "7.20.7",
         "@dragosia/eslint-config": "workspace:*",
         "@dragosia/tsconfig": "workspace:*",
+        "@next/bundle-analyzer": "^13.1.1",
         "@trivago/prettier-plugin-sort-imports": "4.0.0",
         "@types/glob": "8.0.0",
         "@types/mdx": "*",

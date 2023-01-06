@@ -1,15 +1,16 @@
-import { Divider, ThemeProvider, Typography } from '@mui/material';
+import { Divider, Typography } from '@mui/material';
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import React from 'react';
 
-import { Comments } from '../Comments';
 import { PageContent } from '../page/Content';
 import { PageHeader } from '../page/Header';
 import { PageWrapper } from '../page/Wrapper';
-import { THEME } from '../theme';
 
 import { WikiBreadcrumbs } from './Breadcrumb';
 import { Link } from './Link';
+
+const Comments = dynamic(() => import('../Comments/Comments'));
 
 export interface WikiPageMeta {
     title: string;

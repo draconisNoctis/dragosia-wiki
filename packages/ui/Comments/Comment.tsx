@@ -1,14 +1,16 @@
-import { Alert, Box, BoxProps, Button, Theme, Tooltip, Typography } from '@mui/material';
+import { Box, BoxProps, Button, Theme, Tooltip, Typography } from '@mui/material';
+import dynamic from 'next/dynamic';
 import React from 'react';
 
 import { CommentData, useAuthState, useQueryCommentsByParent, useQueryUserByUid } from '@dragosia/firebase';
 
-import { Markdown } from '../Markdown';
 import { dayjs } from '../dayjs';
 
 import { CommentForm } from './CommentForm';
 import { Comments } from './Comments';
 import { Reactions } from './Reactions';
+
+const Markdown = dynamic(() => import('../Markdown'));
 
 export const Comment: React.FunctionComponent<{ id: string; comment: CommentData } & BoxProps> = ({ id, comment, ...props }) => {
     const [showComments, setShowComments] = React.useState(false);
@@ -33,7 +35,6 @@ export const Comment: React.FunctionComponent<{ id: string; comment: CommentData
             </Box>
             <Markdown
                 variant="body1"
-                component="div"
                 sx={(theme: Theme) => ({
                     borderRadius: 2,
                     p: 2,

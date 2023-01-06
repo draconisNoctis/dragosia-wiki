@@ -35,10 +35,12 @@ const components: Partial<Omit<NormalComponents, keyof SpecialComponents> & Spec
 
 export const Markdown: MarkdownComponent = ({ children = '', ...props }) => {
     return (
-        <Typography {...props}>
+        <Typography component="div" {...props}>
             <ReactMarkdown components={components} skipHtml={true}>
                 {children}
             </ReactMarkdown>
         </Typography>
     );
 };
+
+export default Markdown;

@@ -31,3 +31,4 @@ export const Comments: React.FunctionComponent<{ parent: string; root?: boolean 
         </Box>
     );
 };
+export default Comments;
