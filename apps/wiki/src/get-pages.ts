@@ -21,7 +21,7 @@ export function getPages(pattern?: string): Promise<WikiPage[]> {
 
 export async function _getPages(pattern?: string): Promise<WikiPage[]> {
     const pageDir = path.resolve(process.cwd(), 'pages');
-    const files = await glob(`${pageDir}/${pattern ?? '**/*'}`, { nodir: true });
+    const files = await glob(`${pageDir}/${pattern ?? '**/*'}`, { nodir: true, ignore: ['**/*[*', '**/*]*'] });
 
     return Promise.all(
         files.map(async filename => {

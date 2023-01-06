@@ -13,7 +13,7 @@ export default function WikiIndex({ pages }: { pages?: WikiPage[] }) {
             <Typography variant="h3" component="h3" sx={{ mt: 2 }}>
                 Tags
             </Typography>
-            {pages && <TagList pages={pages} />}
+            {pages && <TagList pages={pages} linkPrefix="/wiki/tags/" />}
         </WikiPage>
     );
 }

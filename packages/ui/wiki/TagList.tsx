@@ -1,12 +1,11 @@
 import { Avatar, Grid, List, ListItem, ListItemAvatar, ListItemText, useTheme } from '@mui/material';
+import NextLink from 'next/link';
 import React from 'react';
 
 import { Link } from './Link';
 import { WikiPage } from './Page';
 
-export const TagList: React.FunctionComponent<{ pages: WikiPage[] }> = ({ pages }) => {
-    const theme = useTheme();
-
+export const TagList: React.FunctionComponent<{ pages: WikiPage[]; linkPrefix?: string }> = ({ pages, linkPrefix }) => {
     const sortedPages = React.useMemo(() => pages.slice().sort((a, b) => a.meta?.title.localeCompare(b.meta?.title ?? '') ?? 0), [pages]);
     const tags = React.useMemo(
         () =>
@@ -31,7 +30,15 @@ export const TagList: React.FunctionComponent<{ pages: WikiPage[] }> = ({ pages 
                             {char && <Avatar sx={{ bgcolor: 'primary.main', color: 'text.primary' }}>{char}</Avatar>}
                         </ListItemAvatar>
                         <ListItemText
-                            primary={tag}
+                            primary={
+                                linkPrefix ? (
+                                    <Link href={linkPrefix + tag} typography="tubtitle1">
+                                        {tag}
+                                    </Link>
+                                ) : (
+                                    tag
+                                )
+                            }
                             secondaryTypographyProps={{ component: 'div' }}
                             secondary={
                                 <Grid container spacing={1}>
