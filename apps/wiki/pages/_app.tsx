@@ -9,16 +9,33 @@ import { CssBaseline, ThemeProvider, Typography } from '@mui/material';
 import type { MDXComponents } from 'mdx/types';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
+import React from 'react';
 
 import { CurrentUserProvider, QueryClient, QueryClientProvider } from '@dragosia/firebase';
-import { Link, THEME, createEmotionCache } from '@dragosia/ui';
+import { Link, THEME, createEmotionCache, useWikiPage } from '@dragosia/ui';
 
 import '../src/base.scss';
+
+const MDXLink: React.FunctionComponent<React.PropsWithChildren<{ href?: string; target?: string; id?: string }>> = ({
+    href = '#',
+    target,
+    children,
+    id
+}) => {
+    const { pages } = useWikiPage();
+
+    if (href.startsWith('wiki:')) {
+        const suffix = href.substring(5);
+        href = pages?.find(p => p.link.startsWith('/wiki') && p.link.endsWith(`/${suffix}`))?.link ?? `/wiki/${suffix}`;
+    }
+
+    return <Link autocolor {...{ href, target, children, id }} />;
+};
 
 const clientSideEmotionCache = createEmotionCache();
 const queryClient = new QueryClient();
 const components: MDXComponents = {
-    a: ({ href = '#', target, children, id }) => <Link autocolor {...{ href, target, children, id }} />,
+    a: MDXLink,
     h1: ({ id, children }) => (
         <Typography variant="h2" component="h2" id={id} sx={{ mt: '1.6rem' }}>
             {children}
