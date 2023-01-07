@@ -6,7 +6,7 @@ import { getPages } from '@dragosia/wiki';
 export const meta: WikiPageMeta = {
     title: 'Dragosia Wiki'
 };
-export const getStaticProps = WikiPageWrapper.staticProps(() => getPages('wiki/**/*'));
+export const getStaticProps = WikiPageWrapper.staticProps(() => getPages());
 export default function WikiIndex({ pages }: { pages?: WikiPage[] }) {
     return (
         <WikiPage meta={meta} pages={pages} navigation={<Link href="/wiki">Tags</Link>}>

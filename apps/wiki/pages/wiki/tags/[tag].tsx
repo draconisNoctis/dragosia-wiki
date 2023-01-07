@@ -10,7 +10,7 @@ export interface WikiTag {
 }
 
 export const getStaticProps: GetStaticProps<{ pages: WikiPage[]; tag: WikiTag }, { tag: string }> = async ({ params }) => {
-    const pages = await getPages('wiki/**/*');
+    const pages = await getPages();
     const tag = {
         name: params!.tag!,
         pages: pages.filter(p => p.meta?.tags?.includes(params!.tag!))
@@ -25,7 +25,7 @@ export const getStaticProps: GetStaticProps<{ pages: WikiPage[]; tag: WikiTag },
 };
 
 export const getStaticPaths: GetStaticPaths<{ tag: string }> = async () => {
-    const pages = await getPages('wiki/**/*');
+    const pages = await getPages();
     const tags = Array.from(new Set(pages.flatMap(p => p.meta?.tags ?? [])));
 
     return {

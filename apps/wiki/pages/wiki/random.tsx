@@ -7,7 +7,7 @@ import { getPages } from '@dragosia/wiki';
 export const meta: WikiPageMeta = {
     title: 'Zufälliger Artikel'
 };
-export const getStaticProps = WikiPageWrapper.staticProps(() => getPages('wiki/**/*'));
+export const getStaticProps = WikiPageWrapper.staticProps(() => getPages());
 
 export default function WikiRandom({ pages }: { pages?: WikiPage[] }) {
     const router = useRouter();

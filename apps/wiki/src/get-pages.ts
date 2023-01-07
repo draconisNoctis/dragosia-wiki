@@ -4,24 +4,23 @@ import path from 'node:path';
 
 import { WikiPage } from '@dragosia/ui';
 
-const pagesCache: Map<string | undefined, { deref(): Promise<WikiPage[]> | undefined }> = new Map();
+let pagesCache: { deref(): Promise<WikiPage[]> | undefined } | undefined;
 
-export function getPages(pattern?: string): Promise<WikiPage[]> {
-    const resultFromCache = pagesCache.get(pattern)?.deref();
+export function getPages(): Promise<WikiPage[]> {
+    const resultFromCache = pagesCache?.deref();
     if (resultFromCache) {
         return resultFromCache;
     }
 
-    const result = _getPages(pattern);
+    const result = _getPages();
     // eslint-disable-next-line turbo/no-undeclared-env-vars
-    const cacheItem = process.env.NEXT_PHASE === PHASE_PRODUCTION_BUILD ? { deref: () => result } : new WeakRef(result);
-    pagesCache.set(pattern, cacheItem);
+    pagesCache = process.env.NEXT_PHASE === PHASE_PRODUCTION_BUILD ? { deref: () => result } : new WeakRef(result);
     return result;
 }
 
-export async function _getPages(pattern?: string): Promise<WikiPage[]> {
+export async function _getPages(): Promise<WikiPage[]> {
     const pageDir = path.resolve(process.cwd(), 'pages');
-    const files = await glob(`${pageDir}/${pattern ?? '**/*'}`, { nodir: true, ignore: ['**/*[*', '**/*]*'] });
+    const files = await glob(`${pageDir}/**/*`, { nodir: true, ignore: ['**/*[*', '**/*]*'] });
 
     return Promise.all(
         files.map(async filename => {
