@@ -13,6 +13,8 @@ import Head from 'next/head';
 import { CurrentUserProvider, QueryClient, QueryClientProvider } from '@dragosia/firebase';
 import { Link, THEME, createEmotionCache } from '@dragosia/ui';
 
+import '../src/base.scss';
+
 const clientSideEmotionCache = createEmotionCache();
 const queryClient = new QueryClient();
 const components: MDXComponents = {
