@@ -13,9 +13,8 @@ export default function WikiRandom({ pages }: { pages?: WikiPage[] }) {
     const router = useRouter();
 
     React.useEffect(() => {
-        const link = pages
-            ? pages.filter(p => !p.link.includes('/random') && p.link.startsWith('/wiki/'))[(Math.random() * pages.length) | 0].link
-            : '/';
+        const availablePages = pages?.filter(p => !p.link.includes('/random') && p.link.startsWith('/wiki/'));
+        const link = availablePages?.[(Math.random() * availablePages?.length) | 0].link ?? '/';
         router.replace(link);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
