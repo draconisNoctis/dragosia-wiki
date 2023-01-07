@@ -10,7 +10,7 @@ export const PageWrapper: React.FunctionComponent<React.PropsWithChildren> = ({ 
                 mt: 0,
                 display: 'flex',
                 flexDirection: 'column',
-                bgcolor: 'pageBackground.main',
+                bgcolor: 'background.page',
                 minHeight: 'calc(100vh)',
                 backgroundImage: { xs: `url(${LeftWood.src})` },
                 backgroundRepeat: 'repeat-y',
