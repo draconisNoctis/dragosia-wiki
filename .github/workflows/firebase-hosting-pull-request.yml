@@ -9,6 +9,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/cache@v3
+        id: next-cache
+        with:
+          key: ${{ runner.os }}-primes
+          path: |
+            ${{ github.workspace }}/apps/wiki/.next/cache
       - run: yarn && yarn build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
