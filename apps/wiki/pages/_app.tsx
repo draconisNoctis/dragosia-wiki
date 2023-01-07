@@ -18,7 +18,7 @@ import '../src/base.scss';
 const clientSideEmotionCache = createEmotionCache();
 const queryClient = new QueryClient();
 const components: MDXComponents = {
-    a: ({ href = '#', target, children, id }) => <Link {...{ href, target, children, id }} />,
+    a: ({ href = '#', target, children, id }) => <Link autocolor {...{ href, target, children, id }} />,
     h1: ({ id, children }) => (
         <Typography variant="h2" component="h2" id={id} sx={{ mt: '1.6rem' }}>
             {children}

@@ -41,6 +41,7 @@ export type LinkProps = {
     href: NextLinkProps['href'];
     linkAs?: NextLinkProps['as']; // Useful when the as prop is shallow by styled().
     noLinkStyle?: boolean;
+    autocolor?: boolean;
 } & Omit<NextLinkComposedProps, 'to' | 'linkAs' | 'href'> &
     Omit<MuiLinkProps, 'href'>;
 
@@ -97,7 +98,12 @@ export const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(function Link
         return <NextLinkComposed className={className} ref={ref} {...nextjsProps} {...other} />;
     }
 
-    const color = typeof href !== 'string' || pages?.some(p => p.link === href) ? 'secondary' : 'error';
+    const color =
+        other.color ?? other.autocolor
+            ? typeof href !== 'string' || pages?.some(p => p.link === href)
+                ? 'secondary'
+                : 'error'
+            : undefined;
 
     return <MuiLink component={NextLinkComposed} className={className} ref={ref} color={color} {...nextjsProps} {...other} />;
 });

@@ -16,7 +16,7 @@ export const WikiBreadcrumbs: React.FunctionComponent<Parameters<typeof Breadcru
             {breadcrumbPages && (
                 <Breadcrumbs {...args}>
                     {breadcrumbPages.map((page, index) => (
-                        <Link key={index} href={page.link}>
+                        <Link key={index} href={page.link} autocolor>
                             {page.meta?.title ?? page.link}
                         </Link>
                     ))}

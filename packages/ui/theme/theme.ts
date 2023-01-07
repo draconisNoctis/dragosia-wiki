@@ -26,7 +26,8 @@ declare module '@mui/material/styles/createPalette' {
 const palette = {
     mode: 'dark',
     primary: {
-        main: '#330500'
+        main: '#f5e9b1',
+        contrastText: '#383630'
     },
     secondary: {
         main: '#00AA00'

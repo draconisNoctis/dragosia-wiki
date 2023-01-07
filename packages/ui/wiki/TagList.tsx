@@ -27,12 +27,12 @@ export const TagList: React.FunctionComponent<{ pages: WikiPage[]; linkPrefix?: 
                 return (
                     <ListItem key={tag}>
                         <ListItemAvatar>
-                            {char && <Avatar sx={{ bgcolor: 'primary.main', color: 'text.primary' }}>{char}</Avatar>}
+                            {char && <Avatar sx={{ bgcolor: 'primary.main', color: 'primary.contrastText' }}>{char}</Avatar>}
                         </ListItemAvatar>
                         <ListItemText
                             primary={
                                 linkPrefix ? (
-                                    <Link href={linkPrefix + tag} typography="tubtitle1">
+                                    <Link href={linkPrefix + tag} typography="tubtitle1" sx={{ textTransform: 'uppercase' }}>
                                         {tag}
                                     </Link>
                                 ) : (
@@ -46,7 +46,9 @@ export const TagList: React.FunctionComponent<{ pages: WikiPage[]; linkPrefix?: 
                                         .filter(p => p.meta?.tags?.includes(tag))
                                         .map(page => (
                                             <Grid key={page.link} item xs={3} md={2}>
-                                                <Link href={page.link}>{page.meta?.title ?? page.link}</Link>
+                                                <Link autocolor href={page.link}>
+                                                    {page.meta?.title ?? page.link}
+                                                </Link>
                                             </Grid>
                                         ))}
                                 </Grid>
