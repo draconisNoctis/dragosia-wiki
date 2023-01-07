@@ -1,0 +1,19 @@
+import { WikiPageMeta, WikiPageWrapper } from '@dragosia/ui';
+import { getPages } from '@dragosia/wiki';
+
+export const meta = {
+    title: 'Sümpfe des Elends',
+    tags: ['geographica']
+};
+export const getStaticProps = WikiPageWrapper.staticProps(() => getPages());
+export default WikiPageWrapper(meta);
+
+# Sümpfe des Elends
+
+Die Sümpfe des Elends sind ein feuchtes, schlammiges Gebiet im Westen von [Dragosia](wiki:dragosia).
+Sie sind fast undurchdringlich und voller gefährlicher Pflanzen und Tiere.
+Viele Leute meiden die Sümpfe, da sie als verflucht gelten.
+Hier leben die [Orks](wiki:orks), ein wildes Volk, vor dem sich viele fürchten.
+Die Sümpfe sind auch Heimat vieler Sumpfriesen und [Goblins](wiki:goblins), die den Orks dienen.
+Die Luft in den Sümpfen ist feucht und stickig und wird von dem Gestank von Verwesung und Schlamm dominiert.
+Es gibt nur wenige Orte, an denen man sich in den Sümpfen sicher fühlen kann.
