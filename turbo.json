@@ -4,6 +4,7 @@
         "build": {
             "cache": false,
             "dependsOn": ["^build"],
+            "env": ["NEXT_SHARP_PATH", "ANALYZE"],
             "outputs": ["dist/**", ".next/**"]
         },
         "lint": {

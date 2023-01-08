@@ -15,7 +15,7 @@
     "main": "./src/index.ts",
     "types": "./src/index.ts",
     "scripts": {
-        "build": "next build && next export",
+        "build": "NEXT_SHARP_PATH=$(yarn node --eval \"process.stdout.write(require.resolve('sharp'))\") next build && next export",
         "dev": "next dev",
         "lint": "next lint",
         "start": "next start"
