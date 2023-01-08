@@ -2,12 +2,12 @@ import { AccountCircle } from '@mui/icons-material';
 import { Avatar, Box, BoxProps, IconButton, Menu, MenuItem, Typography } from '@mui/material';
 import React from 'react';
 
-import { signOut, useCurrentAuth } from '@dragosia/firebase';
+import { signOut, useCurrentUser } from '@dragosia/firebase';
 
 import { Link } from './Link';
 
 export const AuthMenu: React.FunctionComponent<BoxProps> = props => {
-    const auth = useCurrentAuth();
+    const { auth } = useCurrentUser();
     const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
 
     const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {

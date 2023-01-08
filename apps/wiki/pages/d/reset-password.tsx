@@ -2,7 +2,7 @@ import { Box } from '@mui/material';
 import { useRouter } from 'next/router';
 import React from 'react';
 
-import { sendResetPasswordEmail, useCurrentAuth } from '@dragosia/firebase';
+import { sendResetPasswordEmail, useCurrentUser } from '@dragosia/firebase';
 import { ResetPasswordForm } from '@dragosia/ui';
 import WikiPage from '@dragosia/wiki';
 
@@ -14,7 +14,7 @@ export default function Register() {
     const [error, setError] = React.useState<string | undefined>();
     const [message, setMessage] = React.useState<string | undefined>();
     const router = useRouter();
-    const auth = useCurrentAuth();
+    const { auth } = useCurrentUser();
 
     React.useEffect(() => {
         if (auth) {

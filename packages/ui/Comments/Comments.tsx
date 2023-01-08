@@ -2,7 +2,7 @@ import { Alert, Box, BoxProps, CircularProgress } from '@mui/material';
 import Link from 'next/link';
 import React from 'react';
 
-import { useCurrentAuth, useQueryCommentsByParent } from '@dragosia/firebase';
+import { useCurrentUser, useQueryCommentsByParent } from '@dragosia/firebase';
 
 import { Comment } from './Comment';
 import { CommentForm } from './CommentForm';
@@ -10,7 +10,7 @@ import { CommentForm } from './CommentForm';
 export const Comments: React.FunctionComponent<{ parent: string; root?: boolean } & BoxProps> = ({ parent, root, sx, ...props }) => {
     const [data, isLoading] = useQueryCommentsByParent(parent);
 
-    const auth = useCurrentAuth();
+    const { auth } = useCurrentUser();
 
     if (isLoading) {
         return <CircularProgress />;

@@ -2,7 +2,7 @@ import { Box } from '@mui/material';
 import { useRouter } from 'next/router';
 import React from 'react';
 
-import { createAccount, useCurrentAuth } from '@dragosia/firebase';
+import { createAccount, useCurrentUser } from '@dragosia/firebase';
 import { Credentials, RegisterForm } from '@dragosia/ui';
 import WikiPage from '@dragosia/wiki';
 
@@ -13,7 +13,7 @@ export const meta = {
 export default function Register() {
     const [error, setError] = React.useState<string | undefined>();
     const router = useRouter();
-    const auth = useCurrentAuth();
+    const { auth } = useCurrentUser();
 
     React.useEffect(() => {
         if (auth) {

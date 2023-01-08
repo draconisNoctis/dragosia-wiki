@@ -8,7 +8,7 @@ export const WikiGmInfo: React.FunctionComponent<React.PropsWithChildren<{}>> = 
 
     const onClick = React.useCallback(() => setVisible(visible => !visible), [setVisible]);
 
-    const user = useCurrentUser();
+    const { user } = useCurrentUser();
 
     return (
         <>

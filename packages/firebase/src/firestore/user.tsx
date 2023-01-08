@@ -46,10 +46,6 @@ export const CurrentUserProvider: React.FunctionComponent<React.PropsWithChildre
     return <CurrentUserContext.Provider value={currentUser}>{children}</CurrentUserContext.Provider>;
 };
 
-export function useCurrentAuth() {
-    return useContext(CurrentUserContext).auth;
-}
-
 export function useCurrentUser() {
-    return useContext(CurrentUserContext).user;
+    return useContext(CurrentUserContext);
 }

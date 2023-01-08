@@ -1,7 +1,7 @@
 import { Box, BoxProps, Button, TextField } from '@mui/material';
 import React from 'react';
 
-import { createComment, useCurrentAuth } from '@dragosia/firebase';
+import { createComment, useCurrentUser } from '@dragosia/firebase';
 
 export const CommentForm: React.FunctionComponent<{ parent: string; created?: () => void } & BoxProps> = ({
     parent,
@@ -11,7 +11,7 @@ export const CommentForm: React.FunctionComponent<{ parent: string; created?: ()
 }) => {
     const [comment, setComment] = React.useState('');
     const [error, setError] = React.useState<undefined | string>();
-    const auth = useCurrentAuth();
+    const { auth } = useCurrentUser();
 
     if (!auth) return null;
 

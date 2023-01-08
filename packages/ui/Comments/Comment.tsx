@@ -2,7 +2,7 @@ import { Box, BoxProps, Button, Theme, Tooltip, Typography } from '@mui/material
 import dynamic from 'next/dynamic';
 import React from 'react';
 
-import { CommentData, useCurrentAuth, useQueryCommentsByParent, useQueryUserByUid } from '@dragosia/firebase';
+import { CommentData, useCurrentUser, useQueryCommentsByParent, useQueryUserByUid } from '@dragosia/firebase';
 
 import { dayjs } from '../dayjs';
 
@@ -16,7 +16,7 @@ export const Comment: React.FunctionComponent<{ id: string; comment: CommentData
     const [showComments, setShowComments] = React.useState(false);
     const [showReply, setShowReply] = React.useState(false);
 
-    const auth = useCurrentAuth();
+    const { auth } = useCurrentUser();
     const [user] = useQueryUserByUid(comment.author);
     const [comments] = useQueryCommentsByParent(id);
     const commentsCount = comments?.size;
