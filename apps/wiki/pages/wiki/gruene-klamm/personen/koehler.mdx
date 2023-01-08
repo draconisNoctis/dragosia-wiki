@@ -1,12 +1,11 @@
-import { WikiGmInfo, WikiPageMeta, WikiPageWrapper } from '@dragosia/ui';
-import { getPages } from '@dragosia/wiki';
+import { WikiGmInfo, WikiPageWrapper } from '@dragosia/ui';
 
 export const meta = {
     title: 'Der Köhler',
     tags: ['nordlandreich', 'grüne klamm', 'person']
 };
-export const getStaticProps = WikiPageWrapper.staticProps(() => getPages());
-export default WikiPageWrapper(meta);
+export { getStaticProps } from '@dragosia/wiki/static-props';
+export { default } from '@dragosia/wiki';
 
 # Der Köhler
 
@@ -22,7 +21,7 @@ Er hat keine Familie und keine Freunde und verbringt seine Zeit damit, Holz zu h
 
 <WikiGmInfo>
 
-_Abenteueridee:_
+### Abenteueridee
 
 Die Spieler finden die Kohlefeuer unkontrolliert brennend vor, vom Köhler ist weit und breit nichts zu sehen.
 
@@ -32,5 +31,7 @@ Mögliche Ursachen:
 -   Verletzung beim Holzhacken/Baum fällen
 -   Verletzung durch Kreatur aus dem düsteren Wald
 -   Verletzung durch Überfall (zusätzlich Werkzeug verschwunden/gestohlen)
+
+Spieler könnten vom Schmied oder anderen Dorfbewohnern einen Hinweis erhalten, dass die Brennholz- oder Kohlelieferungen ausblieben.
 
 </WikiGmInfo>

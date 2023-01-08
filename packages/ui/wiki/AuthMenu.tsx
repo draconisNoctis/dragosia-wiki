@@ -20,9 +20,9 @@ export const AuthMenu: React.FunctionComponent<BoxProps> = props => {
 
     return (
         <Box {...props}>
-            {!auth && <Link href="/login">Login</Link>}
+            {!auth && <Link href="/d/login">Login</Link>}
             {!auth && (
-                <Link href="/register" sx={{ ml: 2 }}>
+                <Link href="/d/register" sx={{ ml: 2 }}>
                     Registrieren
                 </Link>
             )}

@@ -1,9 +1,8 @@
-import { Avatar, Grid, List, ListItem, ListItemAvatar, ListItemText, useTheme } from '@mui/material';
-import NextLink from 'next/link';
+import { Avatar, Grid, List, ListItem, ListItemAvatar, ListItemText } from '@mui/material';
 import React from 'react';
 
 import { Link } from './Link';
-import { WikiPage } from './Page';
+import { WikiPage } from './contexts';
 
 export const TagList: React.FunctionComponent<{ pages: WikiPage[]; linkPrefix?: string }> = ({ pages, linkPrefix }) => {
     const sortedPages = React.useMemo(() => pages.slice().sort((a, b) => a.meta?.title.localeCompare(b.meta?.title ?? '') ?? 0), [pages]);

@@ -20,7 +20,7 @@ export const Comments: React.FunctionComponent<{ parent: string; root?: boolean 
         <Box sx={[{ mb: 2, width: { xs: '100%', sm: '60%', md: '400px' } }, ...(Array.isArray(sx) ? sx : [sx])]} {...props}>
             {root && !auth && (
                 <Alert severity="info">
-                    <Link href="/login">Log dich ein, um einen Kommentar zu schreiben</Link>
+                    <Link href="/d/login">Log dich ein, um einen Kommentar zu schreiben</Link>
                 </Alert>
             )}
             {root && auth && data && data.docs.length === 0 && <Alert severity="info">Sei der erste, der einen Kommentar schreibt</Alert>}

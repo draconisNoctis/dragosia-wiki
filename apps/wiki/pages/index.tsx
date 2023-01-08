@@ -1,7 +1,7 @@
 import { Box, Button, Typography } from '@mui/material';
 import Link from 'next/link';
 
-import { WikiPage } from '@dragosia/ui';
+import { WikiPageComponent } from '@dragosia/ui';
 
 export const meta = {
     title: 'Dragosia'
@@ -9,7 +9,7 @@ export const meta = {
 
 export default function Index() {
     return (
-        <WikiPage meta={meta}>
+        <WikiPageComponent>
             <Box
                 sx={{
                     display: 'flex',
@@ -28,6 +28,6 @@ export default function Index() {
                     </Link>
                 </Box>
             </Box>
-        </WikiPage>
+        </WikiPageComponent>
     );
 }

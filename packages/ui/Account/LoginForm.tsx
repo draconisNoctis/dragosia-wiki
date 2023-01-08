@@ -38,10 +38,10 @@ export const LoginForm: React.FunctionComponent<
                 helperText={errors.password?.message ?? undefined}
             />
             <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
-                <Link color="secondary" href="/register">
+                <Link color="secondary" href="/d/register">
                     Registrieren
                 </Link>
-                <Link color="secondary" href="/reset-password">
+                <Link color="secondary" href="/d/reset-password">
                     Passwort vergessen?
                 </Link>
             </Box>

@@ -1,17 +1,14 @@
-import { WikiPageMeta, WikiPageWrapper } from '@dragosia/ui';
-import { getPages } from '@dragosia/wiki';
-
 export const meta = {
     title: 'Hexenkundige',
     tags: ['hexerei', 'magie', 'hexe', 'hexer']
 };
-export const getStaticProps = WikiPageWrapper.staticProps(() => getPages());
-export default WikiPageWrapper(meta);
+export { getStaticProps } from '@dragosia/wiki/static-props';
+export { default } from '@dragosia/wiki';
 
 # Hexenkundige
 
 Hexen und Hexer Personen, die sich auf die Anwendung von Magie und spirituellen Praktiken spezialisiert haben.
-Sie sind sehr geübt in der praktischen Anwendung ihrer Künste und können als [Kräuterkundige](/wiki/kraeuterkunde) betrachtet werden,
+Sie sind sehr geübt in der praktischen Anwendung ihrer Künste und können als [Kräuterkundige](wiki:kraeuterkunde) betrachtet werden,
 die sich mit der Verwendung von Pflanzen und ihren heilenden Eigenschaften beschäftigen.
 Sie können auch als magisch begabte Personen betrachtet werden, die über bestimmte Fähigkeiten oder Kräfte verfügen.
 

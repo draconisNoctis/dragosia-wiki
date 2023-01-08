@@ -2,16 +2,16 @@ import { Box } from '@mui/material';
 import { useRouter } from 'next/router';
 import React from 'react';
 
-import { sendResetPasswordEmail, useCurrentAuth } from '@dragosia/firebase';
-import { ResetPasswordForm, WikiPage } from '@dragosia/ui';
+import { signInAccount, signInWithGoogle, useCurrentAuth } from '@dragosia/firebase';
+import { Credentials, LoginForm } from '@dragosia/ui';
+import WikiPage from '@dragosia/wiki';
 
 export const meta = {
-    title: 'Dragosia Registrierung'
+    title: 'Dragosia Login'
 };
 
-export default function Register() {
+export default function Login() {
     const [error, setError] = React.useState<string | undefined>();
-    const [message, setMessage] = React.useState<string | undefined>();
     const router = useRouter();
     const auth = useCurrentAuth();
 
@@ -21,26 +21,29 @@ export default function Register() {
         }
     }, [router, auth]);
 
-    const onSubmit = React.useCallback(async (email: string) => {
+    const onSubmit = React.useCallback(async (credentials: Credentials) => {
         try {
-            await sendResetPasswordEmail(email);
-            setError(undefined);
-            setMessage('E-Mail für das zurücksetzen des Passworts wurde versandt');
+            await signInAccount(credentials.email, credentials.password);
         } catch (err: any) {
-            setMessage(undefined);
             setError(String(err.message));
         }
     }, []);
 
+    const onLogInWith = React.useCallback(async (provider: 'GOOGLE') => {
+        if (provider === 'GOOGLE') {
+            await signInWithGoogle();
+        }
+    }, []);
+
     return (
-        <WikiPage meta={meta}>
+        <WikiPage>
             <Box
                 sx={{
                     display: 'flex',
                     flexDirection: 'column',
                     gap: 2
                 }}>
-                <ResetPasswordForm onSubmit={onSubmit} error={error} message={message} sx={{ mx: '10vw', my: '10vh' }} />
+                <LoginForm onSubmit={onSubmit} error={error} onLogInWith={onLogInWith} sx={{ mx: '10vw', my: '10vh' }} />
             </Box>
         </WikiPage>
     );

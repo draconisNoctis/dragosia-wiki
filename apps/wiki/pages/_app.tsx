@@ -1,4 +1,3 @@
-import { CacheProvider, EmotionCache } from '@emotion/react';
 import '@fontsource/almendra';
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
@@ -12,7 +11,7 @@ import Head from 'next/head';
 import React from 'react';
 
 import { CurrentUserProvider, QueryClient, QueryClientProvider } from '@dragosia/firebase';
-import { Link, THEME, createEmotionCache, useWikiPage } from '@dragosia/ui';
+import { Link, NavigationContext, THEME, WikiPage, WikiPageContext, useWikiPage } from '@dragosia/ui';
 
 import '../src/base.scss';
 
@@ -32,7 +31,6 @@ const MDXLink: React.FunctionComponent<React.PropsWithChildren<{ href?: string; 
     return <Link autocolor {...{ href, target, children, id }} />;
 };
 
-const clientSideEmotionCache = createEmotionCache();
 const queryClient = new QueryClient();
 const components: MDXComponents = {
     a: MDXLink,
@@ -68,24 +66,43 @@ const components: MDXComponents = {
     )
 };
 
-export default function App({ Component, pageProps, emotionCache = clientSideEmotionCache }: AppProps & { emotionCache?: EmotionCache }) {
+export default function App({ Component, router, pageProps }: AppProps<{ pages?: WikiPage[] }>) {
+    const page = pageProps.pages?.find(p => p.link === router.route);
+    const navigation = page?.link.startsWith('/wiki') ? (
+        <>
+            <Link href="/wiki">Tags</Link>
+            <Link href="/d/random/wiki">Zufälliger Artikel</Link>
+        </>
+    ) : page?.link.startsWith('/regelwerk') ? (
+        <>
+            <Link href="/regelwerk">Tags</Link>
+            <Link href="/d/random/regelwerk">Zufälliger Artikel</Link>
+        </>
+    ) : null;
+    const title = page?.link.startsWith('/wiki')
+        ? 'Dragosia Wiki'
+        : page?.link.startsWith('/regelwerk')
+        ? 'Dragosia Regelwerk'
+        : 'Dragosia';
     return (
         <>
-            <CacheProvider value={emotionCache}>
-                <Head>
-                    <meta name="viewport" content="initial-scale=1, width=device-width" />
-                </Head>
-                <MDXProvider components={components}>
-                    <ThemeProvider theme={THEME}>
-                        <QueryClientProvider client={queryClient}>
-                            <CurrentUserProvider>
-                                <CssBaseline />
-                                <Component {...pageProps} />
-                            </CurrentUserProvider>
-                        </QueryClientProvider>
-                    </ThemeProvider>
-                </MDXProvider>
-            </CacheProvider>
+            <Head>
+                <meta name="viewport" content="initial-scale=1, width=device-width" />
+            </Head>
+            <MDXProvider components={components}>
+                <ThemeProvider theme={THEME}>
+                    <QueryClientProvider client={queryClient}>
+                        <WikiPageContext.Provider value={{ title, page, pages: pageProps?.pages }}>
+                            <NavigationContext.Provider value={navigation}>
+                                <CurrentUserProvider>
+                                    <CssBaseline />
+                                    <Component {...pageProps} />
+                                </CurrentUserProvider>
+                            </NavigationContext.Provider>
+                        </WikiPageContext.Provider>
+                    </QueryClientProvider>
+                </ThemeProvider>
+            </MDXProvider>
         </>
     );
 }

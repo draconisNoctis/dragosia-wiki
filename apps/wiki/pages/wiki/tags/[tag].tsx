@@ -1,28 +1,12 @@
 import { Box, Typography } from '@mui/material';
-import { GetStaticPaths, GetStaticProps } from 'next';
+import { GetStaticPaths } from 'next';
+import { useRouter } from 'next/router';
 
-import { Link, WikiPage } from '@dragosia/ui';
-import { getPages } from '@dragosia/wiki';
+import { Link, useWikiPage } from '@dragosia/ui';
+import WikiPage from '@dragosia/wiki';
+import { getPages } from '@dragosia/wiki/static-props';
 
-export interface WikiTag {
-    name: string;
-    pages: WikiPage[];
-}
-
-export const getStaticProps: GetStaticProps<{ pages: WikiPage[]; tag: WikiTag }, { tag: string }> = async ({ params }) => {
-    const pages = await getPages();
-    const tag = {
-        name: params!.tag!,
-        pages: pages.filter(p => p.meta?.tags?.includes(params!.tag!))
-    };
-
-    return {
-        props: {
-            tag,
-            pages
-        }
-    };
-};
+export { getStaticProps } from '@dragosia/wiki/static-props';
 
 export const getStaticPaths: GetStaticPaths<{ tag: string }> = async () => {
     const pages = await getPages();
@@ -36,18 +20,22 @@ export const getStaticPaths: GetStaticPaths<{ tag: string }> = async () => {
     };
 };
 
-export default function WikiTag({ pages, tag }: { pages: WikiPage[]; tag: WikiTag }) {
+export default function WikiTag() {
+    const tag = useRouter().query.tag as string;
+    const { pages } = useWikiPage();
     return (
-        <WikiPage pages={pages} navigation={<Link href="/wiki">Tags</Link>}>
+        <WikiPage>
             <Typography variant="h2" component="h2" sx={{ mt: 2 }}>
-                Tag: {tag.name}
+                Tag: {tag}
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-                {tag.pages.map(page => (
-                    <Link key={page.link} href={page.link}>
-                        {page.meta?.title ?? page.link}
-                    </Link>
-                ))}
+                {pages
+                    ?.filter(p => p.meta?.tags?.includes(tag))
+                    .map(page => (
+                        <Link key={page.link} href={page.link} autocolor>
+                            {page.meta?.title ?? page.link}
+                        </Link>
+                    ))}
             </Box>
         </WikiPage>
     );

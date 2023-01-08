@@ -2,7 +2,7 @@ import { Breadcrumbs, Typography } from '@mui/material';
 import React from 'react';
 
 import { Link } from './Link';
-import { useWikiPage } from './Page';
+import { useWikiPage } from './hooks';
 
 export const WikiBreadcrumbs: React.FunctionComponent<Parameters<typeof Breadcrumbs>[0]> = args => {
     const { page, pages } = useWikiPage();

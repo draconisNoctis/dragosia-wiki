@@ -1,12 +1,9 @@
-import { WikiPageMeta, WikiPageWrapper } from '@dragosia/ui';
-import { getPages } from '@dragosia/wiki';
-
 export const meta = {
     title: 'Völker',
     tags: []
 };
-export const getStaticProps = WikiPageWrapper.staticProps(() => getPages());
-export default WikiPageWrapper(meta);
+export { getStaticProps } from '@dragosia/wiki/static-props';
+export { default } from '@dragosia/wiki';
 
 # Völker
 

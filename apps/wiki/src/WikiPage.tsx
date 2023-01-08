@@ -3,25 +3,11 @@ import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import React from 'react';
 
-import { PageContent } from '../Page/Content';
-import { PageHeader } from '../Page/Header';
-import { PageWrapper } from '../Page/Wrapper';
+import { PageContent, PageHeader, PageWrapper, WikiBreadcrumbs, useNavigation, useWikiPage } from '@dragosia/ui';
 
-import { WikiBreadcrumbs } from './Breadcrumbs';
-import { WikiPage, WikiPageMeta } from './contexts';
-import { useNavigation, useWikiPage } from './hooks';
+const Comments = dynamic(() => import('@dragosia/ui/Comments'));
 
-// @TODO: delete
-
-const Comments = dynamic(() => import('../Comments/Comments'));
-
-export function WikiPageWrapper(meta: WikiPageMeta): React.FunctionComponent<React.PropsWithChildren<{ pages?: WikiPage[] }>> {
-    return ({ children }) => {
-        return <WikiPageComponent>{children}</WikiPageComponent>;
-    };
-}
-
-export const WikiPageComponent: React.FunctionComponent<React.PropsWithChildren> = ({ children }) => {
+export const WikiPage: React.FunctionComponent<React.PropsWithChildren> = ({ children }) => {
     const { title, page } = useWikiPage();
     const navigation = useNavigation();
     return (
@@ -46,3 +32,4 @@ export const WikiPageComponent: React.FunctionComponent<React.PropsWithChildren>
         </>
     );
 };
+export default WikiPage;
