@@ -45,7 +45,7 @@ export const Comment: React.FunctionComponent<{ id: string; comment: CommentData
                 })}>
                 {comment.comment}
             </Markdown>
-            <Reactions domain="comments" parent={id} sx={{ mt: -2 }} />
+            <Reactions domain="comments" parent={id} sx={{ '&:not(:empty)': { mt: -2 } }} />
             <Box sx={{ mt: 1, mb: 2, display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', gap: 2 }}>
                 {!!commentsCount && (
                     <Button variant="outlined" onClick={() => setShowComments(b => !b)}>
