@@ -24,7 +24,7 @@ export const PageHeader: React.FunctionComponent<React.PropsWithChildren<{ title
                         px: {
                             xs: 2,
                             sm: 4,
-                            md: 'calc((100vw - 800px) / 2 + 16px)'
+                            md: 'calc((100vw - 900px) / 2 + 16px)'
                         },
                         '> a': { color: 'mainHeader.contrastText', '&:hover': { color: 'text.primary' } }
                     }}>
@@ -44,7 +44,7 @@ export const PageHeader: React.FunctionComponent<React.PropsWithChildren<{ title
                         px: {
                             xs: 2,
                             sm: 4,
-                            md: 'calc((100vw - 800px) / 2 + 16px)'
+                            md: 'calc((100vw - 900px) / 2 + 16px)'
                         },
                         '> a': { color: 'subHeader.contrastText', '&:hover': { color: 'text.secondary' } }
                     }}>
