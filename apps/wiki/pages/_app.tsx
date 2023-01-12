@@ -12,28 +12,13 @@ import React from 'react';
 
 import { CurrentUserProvider, QueryClient, QueryClientProvider } from '@dragosia/firebase';
 import { Link, NavigationContext, THEME, WikiPage, WikiPageContext, useWikiPage } from '@dragosia/ui';
+import { WikiLink } from '@dragosia/wiki';
 
 import '../src/base.scss';
 
-const MDXLink: React.FunctionComponent<React.PropsWithChildren<{ href?: string; target?: string; id?: string }>> = ({
-    href = '#',
-    target,
-    children,
-    id
-}) => {
-    const { pages } = useWikiPage();
-
-    if (href.startsWith('wiki:')) {
-        const suffix = href.substring(5);
-        href = pages?.find(p => p.link.startsWith('/wiki') && p.link.endsWith(`/${suffix}`))?.link ?? `/wiki/${suffix}`;
-    }
-
-    return <Link autocolor {...{ href, target, children, id }} />;
-};
-
 const queryClient = new QueryClient();
 const components: MDXComponents = {
-    a: MDXLink,
+    a: WikiLink,
     h1: ({ id, children }) => (
         <Typography variant="h2" component="h2" id={id} sx={{ mt: '1.6rem' }}>
             {children}

@@ -1,8 +1,14 @@
 import { WikiGmInfo, WikiPageWrapper } from '@dragosia/ui';
 
 export const meta = {
-    title: 'Der Köhler',
-    tags: ['nordlandreich', 'grüne-klamm', 'person']
+    title: 'Der Hexer',
+    tags: ['nordlandreich', 'grüne-klamm', 'person'],
+    profile: {
+        '@': 'person',
+        '@Image': '/gruene-klamm/personen/gravis-munn.png',
+        Name: 'Gravis Munn',
+        Beruf: ['Hexer', 'wiki:hexenkundige']
+    }
 };
 export { getStaticProps } from '@dragosia/wiki/static-props';
 export { default } from '@dragosia/wiki';

@@ -2,7 +2,13 @@ import { WikiGmInfo, WikiPageWrapper } from '@dragosia/ui';
 
 export const meta = {
     title: 'Der Köhler',
-    tags: ['nordlandreich', 'grüne-klamm', 'person']
+    tags: ['nordlandreich', 'grüne-klamm', 'person'],
+    profile: {
+        '@': 'person',
+        '@Image': '/gruene-klamm/personen/grondar-burokson.png',
+        Name: 'Grondar Burokson',
+        Beruf: 'Köhler'
+    }
 };
 export { getStaticProps } from '@dragosia/wiki/static-props';
 export { default } from '@dragosia/wiki';

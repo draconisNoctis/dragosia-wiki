@@ -1,15 +1,19 @@
-import { Divider, Typography } from '@mui/material';
+import { Box, Dialog, Divider, Paper, Typography } from '@mui/material';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
+import Image from 'next/image';
 import React from 'react';
 
 import { PageContent, PageHeader, PageWrapper, WikiBreadcrumbs, useNavigation, useWikiPage } from '@dragosia/ui';
+
+import { WikiProfile } from './Profile/Profile';
 
 const Comments = dynamic(() => import('@dragosia/ui/Comments'));
 
 export const WikiPage: React.FunctionComponent<React.PropsWithChildren> = ({ children }) => {
     const { title, page } = useWikiPage();
     const navigation = useNavigation();
+
     return (
         <>
             <Head>
@@ -19,6 +23,7 @@ export const WikiPage: React.FunctionComponent<React.PropsWithChildren> = ({ chi
                 <PageHeader title={title}>{navigation}</PageHeader>
                 <PageContent>
                     <WikiBreadcrumbs />
+                    {page?.meta?.profile && <WikiProfile profile={page.meta.profile} />}
                     {children}
                     {page && (
                         <>
