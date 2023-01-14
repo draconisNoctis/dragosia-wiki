@@ -19,6 +19,7 @@ export interface WikiPage {
     filename: string;
     link: string;
     meta?: WikiPageMeta | null;
+    content?: string;
 }
 
 export interface IWikiPageContext {

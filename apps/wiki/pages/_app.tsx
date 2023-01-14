@@ -4,14 +4,14 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { MDXProvider } from '@mdx-js/react';
-import { CssBaseline, ThemeProvider, Typography } from '@mui/material';
+import { Box, CssBaseline, FormControl, Input, ThemeProvider, Typography } from '@mui/material';
 import type { MDXComponents } from 'mdx/types';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import React from 'react';
 
 import { CurrentUserProvider, QueryClient, QueryClientProvider } from '@dragosia/firebase';
-import { Link, NavigationContext, THEME, WikiPage, WikiPageContext, useWikiPage } from '@dragosia/ui';
+import { Link, NavigationContext, THEME, WikiPage, WikiPageContext } from '@dragosia/ui';
 import { WikiLink } from '@dragosia/wiki';
 
 import '../src/base.scss';
@@ -51,17 +51,58 @@ const components: MDXComponents = {
     )
 };
 
+const SearchForm: React.FunctionComponent = () => {
+    return (
+        <Box
+            sx={{ ml: 'auto', display: 'flex', flexDirection: 'row', alignItems: 'center' }}
+            component="form"
+            method="get"
+            action="/d/search">
+            <FormControl
+                variant="outlined"
+                sx={theme => ({
+                    '& > .MuiInputBase-root': {
+                        '&>.MuiInputBase-input': {
+                            height: '30px',
+                            px: 2,
+                            py: 0,
+                            lineHeight: '30px',
+                            background: theme.palette.background.button,
+                            borderRadius: '16px',
+                            boxShadow: `0 0 0 2px ${theme.palette.text.accent}, 0 0 0 3px ${theme.palette.background.button}`,
+                            width: '40px',
+                            transition: theme.transitions.create('width'),
+                            '&:focus': {
+                                width: '160px'
+                            }
+                        },
+                        '&:before': {
+                            display: 'none !important'
+                        },
+                        '&:after': {
+                            display: 'none !important'
+                        }
+                    }
+                })}>
+                <Input id="search-query" name="query" placeholder="Suche" />
+            </FormControl>
+        </Box>
+    );
+};
+
 export default function App({ Component, router, pageProps }: AppProps<{ pages?: WikiPage[] }>) {
     const page = pageProps.pages?.find(p => p.link === router.route);
     const navigation = page?.link.startsWith('/wiki') ? (
         <>
             <Link href="/wiki">Tags</Link>
             <Link href="/d/random/wiki">Zufälliger Artikel</Link>
+            <SearchForm />
         </>
     ) : page?.link.startsWith('/regelwerk') ? (
         <>
             <Link href="/regelwerk">Tags</Link>
             <Link href="/d/random/regelwerk">Zufälliger Artikel</Link>
+            <SearchForm />
         </>
     ) : null;
     const title = page?.link.startsWith('/wiki')

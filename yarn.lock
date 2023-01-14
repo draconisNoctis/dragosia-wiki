@@ -446,11 +446,13 @@ __metadata:
     "@next/mdx": 13.1.1
     "@react-query-firebase/firestore": 1.0.0-dev.7
     "@trivago/prettier-plugin-sort-imports": 4.0.0
+    "@types/elasticlunr": ^0.9.5
     "@types/glob": 8.0.0
     "@types/mdx": "*"
     "@types/node": 18.11.18
     "@types/react": 18.0.26
     "@types/react-dom": 18.0.10
+    elasticlunr: ^0.9.5
     eslint: 8.31.0
     firebase: 9.15.0
     glob: 8.0.3
@@ -460,6 +462,7 @@ __metadata:
     prettier-plugin-packagejson: 2.3.0
     react: 18.2.0
     react-dom: 18.2.0
+    react-hook-form: 7.42.0
     react-query: 3.39.2
     remark-frontmatter: 4.0.1
     remark-gfm: 3.0.1
@@ -1884,6 +1887,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/elasticlunr@npm:^0.9.5":
+  version: 0.9.5
+  resolution: "@types/elasticlunr@npm:0.9.5"
+  checksum: 126231fabb0af9303d279815f489db3bcefae1656f1b617725f10b0c38875d06a1c48b2067986ab6697bdea36ee66cdc8afb86d70853717b2019e1371518d01d
+  languageName: node
+  linkType: hard
+
 "@types/eslint-scope@npm:^3.7.3":
   version: 3.7.4
   resolution: "@types/eslint-scope@npm:3.7.4"
@@ -3248,6 +3258,13 @@ __metadata:
   version: 0.1.2
   resolution: "duplexer@npm:0.1.2"
   checksum: 62ba61a830c56801db28ff6305c7d289b6dc9f859054e8c982abd8ee0b0a14d2e9a8e7d086ffee12e868d43e2bbe8a964be55ddbd8c8957714c87373c7a4f9b0
+  languageName: node
+  linkType: hard
+
+"elasticlunr@npm:^0.9.5":
+  version: 0.9.5
+  resolution: "elasticlunr@npm:0.9.5"
+  checksum: 4aa942cd8079c481a92bebf737d4b1e49ac9aec73df3fc7a7543ed2779438af15ebb8b44afab08f882a4e7abd246280d57bc6f845654179cc2a65153360324ea
   languageName: node
   linkType: hard
 
@@ -6857,6 +6874,15 @@ eslint-config-turbo@latest:
     firebase: ">= 9.0.0"
     react: ">= 16.8.0"
   checksum: f7dbc42202082e35a4bbd60e6b729cf7a1a14ca300850f35dbcbda3fe3ecef0c1f8157c5dec711edfd3d6e021f2626e768241296598896731a56ce768bab829b
+  languageName: node
+  linkType: hard
+
+"react-hook-form@npm:7.42.0":
+  version: 7.42.0
+  resolution: "react-hook-form@npm:7.42.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17 || ^18
+  checksum: 597e687671bf133c3c0bfb4b48afd59c1ac6c0ad3fcfb9db505f737d535d6fb1f2a1691296e79bed5f837124fde8eae1fe748f38a2553f2fe20ff170fe5b7e86
   languageName: node
   linkType: hard
 
